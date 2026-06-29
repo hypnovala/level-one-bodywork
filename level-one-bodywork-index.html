@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A grounded bodywork and somatic support membership for people ready to regulate, reconnect, and restore." />
+  <title>Level One Bodywork — Brock Somatic Bodywork</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --cream:       #F5EED8;
+      --cream-mid:   #EFE5C5;
+      --gold:        #C9A96E;
+      --gold-light:  #DEC28D;
+      --brown:       #2E1F0E;
+      --amber:       #6B4C2A;
+      --amber-light: #8B6340;
+      --white:       #FFFFFF;
+      --text:        #2E1F0E;
+      --text-muted:  #6B4C2A;
+
+      --ff-display: 'Fraunces', Georgia, serif;
+      --ff-body:    'Hanken Grotesk', system-ui, sans-serif;
+
+      --max: 720px;
+      --gutter: clamp(1.25rem, 5vw, 2.5rem);
+      --section-gap: 5rem;
+    }
+
+    /* ── Base ────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── Utility ─────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--cream-mid);
+      margin-block: 2.5rem;
+    }
+
+    /* ── Announcement bar ─────────────────────────────────────── */
+    .announce-bar {
+      background: var(--brown);
+      color: var(--gold-light);
+      text-align: center;
+      font-size: 0.78rem;
+      font-family: var(--ff-body);
+      letter-spacing: 0.05em;
+      padding: 0.55rem var(--gutter);
+    }
+
+    /* ── Nav ─────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--cream-mid);
+      padding-block: 1rem;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--brown);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo span {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--amber-light);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta {
+      background: var(--brown);
+      color: var(--cream) !important;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+    }
+
+    .nav-cta:hover { background: var(--amber) !important; color: var(--white) !important; }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: var(--cream);
+    }
+
+    .btn-primary:hover {
+      background: var(--amber);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brown);
+      border: 1.5px solid var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--cream);
+    }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      background: var(--cream);
+      padding-block: 5rem 4rem;
+      border-bottom: 1px solid var(--cream-mid);
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero-label {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.18;
+      color: var(--brown);
+      margin-bottom: 1.25rem;
+      max-width: 560px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--amber-light);
+      max-width: 480px;
+      margin-bottom: 2.25rem;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream-mid);
+    }
+
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      border-radius: 100px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    /* founder strip */
+    .founder-strip {
+      background: var(--brown);
+      padding-block: 1.25rem;
+    }
+
+    .founder-strip .container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .founder-stat {
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .founder-stat .stat-label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .founder-stat .stat-val {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    /* ── SECTION base ─────────────────────────────────────────── */
+    section {
+      padding-block: var(--section-gap);
+    }
+
+    section h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--brown);
+      margin-bottom: 1rem;
+    }
+
+    section h3 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+
+    section p {
+      color: var(--amber-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ── WHY SECTION ─────────────────────────────────────────── */
+    .why { background: var(--white); }
+
+    .why-body {
+      margin-bottom: 2rem;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .outcome-item {
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+      padding: 0.6rem 0.85rem;
+      font-size: 0.82rem;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    /* ── PROBLEM / REFRAME ────────────────────────────────────── */
+    .problem { background: var(--cream); }
+
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--cream-mid);
+      border-radius: 4px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .problem-card .card-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── WHO ─────────────────────────────────────────────────── */
+    .who { background: var(--white); }
+
+    .who-list {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .who-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--amber-light);
+    }
+
+    .who-list li::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── METHOD ─────────────────────────────────────────────── */
+    .method { background: var(--cream); }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .method-card {
+      padding: 1.5rem;
+      background: var(--white);
+      border-top: 2px solid var(--gold);
+    }
+
+    .method-card h4 {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+
+    .method-card p {
+      font-size: 0.85rem;
+    }
+
+    /* ── MEMBERSHIP ─────────────────────────────────────────── */
+    .membership { background: var(--white); }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .price-num {
+      font-family: var(--ff-display);
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: var(--brown);
+      font-style: italic;
+    }
+
+    .price-per {
+      font-size: 0.85rem;
+      color: var(--amber-light);
+    }
+
+    .price-note {
+      font-size: 0.82rem;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit-item {
+      border-bottom: 1px solid var(--cream-mid);
+      padding-bottom: 1.5rem;
+    }
+
+    .benefit-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .benefit-item h4 {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.9rem;
+    }
+
+    /* ── FREE RESOURCE ───────────────────────────────────────── */
+    .free-resource {
+      background: var(--cream);
+    }
+
+    .resource-box {
+      background: var(--white);
+      border: 1px solid var(--cream-mid);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .resource-box ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .resource-box ul li {
+      font-size: 0.9rem;
+      color: var(--amber-light);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .resource-box ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* ── PRACTICE ────────────────────────────────────────────── */
+    .practice { background: var(--white); }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--amber-light);
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--gold);
+      min-width: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .practice-note {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.88rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── ABOUT BROCK ─────────────────────────────────────────── */
+    .about { background: var(--brown); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 3px;
+      display: block;
+    }
+
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: rgba(201,169,110,0.08);
+      border: 1px dashed rgba(201,169,110,0.25);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: rgba(201,169,110,0.35);
+    }
+
+    .about-photo-placeholder svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .about-photo-placeholder span {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .about-photo-note {
+      font-size: 0.65rem;
+      color: rgba(201,169,110,0.3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    .about-text .eyebrow { color: var(--gold-light); }
+
+    .about-text h2 {
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p {
+      color: rgba(245,238,216,0.72);
+      margin-bottom: 0.85rem;
+    }
+
+    .about-creds {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .about-creds li {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .about-creds li::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+      .about-photo-wrap { max-width: 220px; }
+    }
+
+    /* ── APP ─────────────────────────────────────────────────── */
+    .app-section { background: var(--cream); }
+
+    .app-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .app-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-img {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(46,31,14,0.18);
+    }
+
+    .app-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────────────────────── */
+    .testimonials { background: var(--white); }
+
+    .testimonial-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 1.75rem;
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--brown);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card cite {
+      font-style: normal;
+      font-size: 0.78rem;
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FAQ ─────────────────────────────────────────────────── */
+    .faq { background: var(--cream); }
+
+    .faq-list {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    details {
+      border-bottom: 1px solid var(--cream-mid);
+    }
+
+    details summary {
+      padding: 1.1rem 0;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--brown);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--gold);
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details .faq-answer {
+      padding-bottom: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--amber-light);
+      line-height: 1.7;
+    }
+
+    /* ── SESSIONS ────────────────────────────────────────────── */
+    .sessions { background: var(--white); }
+
+    .session-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .session-card {
+      border: 1px solid var(--cream-mid);
+      padding: 1.75rem;
+    }
+
+    .session-card .session-price {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--brown);
+      margin-bottom: 0.25rem;
+    }
+
+    .session-card h4 {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 1rem;
+    }
+
+    .session-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .session-features li {
+      font-size: 0.85rem;
+      color: var(--amber-light);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .session-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* ── WAITLIST ─────────────────────────────────────────────── */
+    .waitlist {
+      background: var(--brown);
+      padding-block: var(--section-gap);
+    }
+
+    .waitlist .eyebrow { color: var(--gold-light); }
+
+    .waitlist h2 {
+      color: var(--cream);
+    }
+
+    .waitlist p {
+      color: var(--gold-light);
+    }
+
+    .waitlist-perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-block: 1.25rem 2rem;
+    }
+
+    .waitlist-perk {
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 420px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .form-group input,
+    .form-group select {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      padding: 0.7rem 0.9rem;
+      font-family: var(--ff-body);
+      font-size: 0.92rem;
+      color: var(--cream);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input::placeholder { color: rgba(201,169,110,0.45); }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: var(--brown);
+      color: var(--cream);
+    }
+
+    .btn-waitlist {
+      background: var(--gold);
+      color: var(--brown);
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    .btn-waitlist:hover { background: var(--gold-light); }
+
+    .form-legal {
+      font-size: 0.72rem;
+      color: rgba(201,169,110,0.5);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--cream-mid);
+      padding-block: 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--amber);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--amber-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    .footer-legal {
+      font-size: 0.72rem;
+      color: var(--gold);
+      line-height: 1.6;
+    }
+
+    /* ── TOOL BUTTONS ────────────────────────────────────────── */
+    .tool-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .btn-tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      color: var(--brown);
+      background: var(--cream);
+      border: 1.5px solid var(--gold);
+      border-radius: 2px;
+      padding: 0.6rem 1.15rem;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+
+    .btn-tool:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+
+    .btn-tool svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      :root { --section-gap: 3.5rem; }
+
+      .nav-links { display: none; }
+
+      .app-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .app-img {
+        aspect-ratio: 4/3;
+        order: -1;
+      }
+
+      .session-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-strip .container {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announce bar -->
+  <div class="announce-bar">
+    Limited time &nbsp;·&nbsp; <strong>40% off your first month</strong> for all members &nbsp;·&nbsp; <a href="#waitlist" style="color:var(--gold-light);text-decoration:underline;text-underline-offset:3px;">Join now →</a>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Brock <span>Somatic Bodywork</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#sessions">Sessions</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#waitlist" class="nav-cta">Join Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Level One Bodywork &nbsp;—&nbsp; Brock Somatic Bodywork</span>
+      <h1>Your body is holding more <em>than it needs to.</em></h1>
+      <p class="hero-sub">
+        Somatic education, guided regulation practices, and private Houston bodywork — 
+        designed to help you move out of chronic tension and back into yourself.
+        Most women complete Level One in 3 to 6 months, depending on where their body is starting from.
+      </p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary">Join Level One — $39/mo</a>
+        <a href="#membership" class="btn btn-outline">Explore What's Included</a>
+      </div>
+      <div class="hero-pills">
+        <span class="pill">Nervous system regulation</span>
+        <span class="pill">Sleep &amp; recovery</span>
+        <span class="pill">Emotional resilience</span>
+        <span class="pill">Muscle tension relief</span>
+        <span class="pill">Body awareness</span>
+        <span class="pill">Calm &amp; presence</span>
+        <span class="pill" style="border-color:var(--gold);color:var(--brown);font-weight:600;">3–6 month journey</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder strip -->
+  <div class="founder-strip">
+    <div class="container">
+      <div class="founder-stat">
+        <span class="stat-label">Membership</span>
+        <span class="stat-val">$39/mo</span>
+      </div>
+      <div class="founder-stat">
+        <span class="stat-label">Includes</span>
+        <span class="stat-val">5 Tools</span>
+      </div>
+      <div class="founder-stat">
+        <span class="stat-label">Timeline</span>
+        <span class="stat-val">3–6 mo</span>
+      </div>
+      <div class="founder-stat">
+        <span class="stat-label">Houston</span>
+        <span class="stat-val">Bodywork</span>
+      </div>
+      <div class="founder-stat">
+        <span class="stat-label">Cancel</span>
+        <span class="stat-val">Anytime</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT BROCK -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-photo-wrap">
+          <!-- Place brock-photo.jpg in your /public folder to display here -->
+          <img
+            src="/brock-photo.jpg"
+            alt="Brock John — Somatic Bodywork Practitioner"
+            class="about-photo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="about-photo-placeholder" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>brock-photo.jpg</span>
+          </div>
+          <p class="about-photo-note">Add brock-photo.jpg to /public</p>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow">About Brock</span>
+          <h2>Nervous system educator &amp; somatic bodywork practitioner.</h2>
+          <p>
+            Brock John is a somatic bodywork practitioner and nervous system educator based in 
+            Houston, TX. His practice draws from therapeutic touch, somatic awareness training, 
+            and polyvagal-informed education.
+          </p>
+          <p>
+            Brock works with high-stress professionals, caregivers, and people navigating chronic 
+            tension — helping them rebuild a felt sense of safety and ease in the body. His approach 
+            is calm, grounded, and rooted in the idea that the body already knows how to heal when 
+            given the right conditions.
+          </p>
+          <p>
+            Through somatic awareness education and therapeutic touch, clients restore nervous system 
+            balance and recover from the chronic stress that accumulates over years of high-demand living.
+          </p>
+          <ul class="about-creds">
+            <li>Polyvagal-Informed Practice</li>
+            <li>Thai Massage &amp; Therapeutic Bodywork</li>
+            <li>Nervous System Regulation Coaching</li>
+            <li>Mind-Body &amp; Somatic Coaching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="container">
+      <span class="eyebrow">Why this exists</span>
+      <h2>Your body is not broken.</h2>
+      <div class="why-body">
+        <p>
+          Long hours, emotional load, caregiving roles, and constant responsibility can keep the nervous 
+          system in an extended stress response. Over time, the body may stay activated long after the day is over.
+        </p>
+        <p style="margin-top:0.75rem;">
+          This shows up as chronic tension, poor sleep, difficulty relaxing, emotional exhaustion, and 
+          a sense of disconnection from your own body. That is biology — not weakness.
+        </p>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-item">Sleep &amp; recovery</div>
+        <div class="outcome-item">Emotional resilience</div>
+        <div class="outcome-item">Calm &amp; presence</div>
+        <div class="outcome-item">Muscle tension relief</div>
+        <div class="outcome-item">Body awareness</div>
+        <div class="outcome-item">Decompression</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <span class="eyebrow">The problem</span>
+      <div class="problem-card">
+        <span class="card-label">Why people feel stuck</span>
+        <h3>Many people end up feeling wired, tense, and disconnected — unable to truly relax.</h3>
+        <p>
+          Disconnection is often the nervous system adapting to overload. It is not a character flaw. 
+          It is a patterned response that, with steady and gentle support, can be retrained.
+        </p>
+      </div>
+      <div class="problem-card">
+        <span class="card-label">Key reframe</span>
+        <h3>The goal is not force. The goal is gentle retraining.</h3>
+        <p>
+          Repeated experiences of awareness, safety, and regulation help the body relearn calm over time. 
+          This is what Level One Bodywork is built around.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="who">
+    <div class="container">
+      <span class="eyebrow">Who this is for</span>
+      <h2>Designed for people carrying high levels of stress</h2>
+      <ul class="who-list">
+        <li>Nurses and healthcare professionals</li>
+        <li>Caregivers and helpers</li>
+        <li>Teachers and service professionals</li>
+        <li>Anyone who feels wired, tense, numb, or exhausted</li>
+        <li>People curious about somatic bodywork and nervous system education</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="method">
+    <div class="container">
+      <span class="eyebrow">The method</span>
+      <h2>A calm, grounded approach to somatic reconnection</h2>
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>Nervous System Education</h4>
+          <p>Understand why stress keeps the body in survival mode and why relaxation can feel difficult after prolonged overload.</p>
+        </div>
+        <div class="method-card">
+          <h4>Guided Regulation Practices</h4>
+          <p>Short, supportive exercises that help the body experience safety, downshift from chronic alertness, and rebuild calm.</p>
+        </div>
+        <div class="method-card">
+          <h4>Somatic Awareness</h4>
+          <p>Learn to notice breathing, muscle tension, and sensation — the early cues your body has been sending all along.</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--cream-mid);border-radius:2px;">
+        <p style="font-size:0.88rem;color:var(--amber-light);line-height:1.65;">
+          <strong style="color:var(--brown);">Level One is a journey, not a program with a fixed end date.</strong> 
+          Training varies per woman — most members move through Level One in 3 to 6 months. 
+          Some arrive with more chronic tension and need more time. Some shift quickly. 
+          The pace is set by your body, not a calendar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="membership" id="membership">
+    <div class="container">
+      <span class="eyebrow">Membership</span>
+      <h2>Level One Bodywork Membership</h2>
+      <p>
+        A private somatic support membership built around five practical tools — 
+        steady, body-first support you can use every week. Level One training varies per woman 
+        but typically ranges between 3 and 6 months, paced entirely by your body's own signals.
+      </p>
+
+      <div class="price-row" style="margin-top:1.75rem;">
+        <span class="price-num">$39</span>
+        <span class="price-per">/month</span>
+      </div>
+      <p class="price-note">Cancel any time &nbsp;·&nbsp; Houston members receive bodywork access</p>
+
+      <ul class="benefit-list">
+        <li class="benefit-item">
+          <h4>Brock Check-In App</h4>
+          <p>A guided daily tool to track your nervous system state between sessions. 
+          Log patterns, note shifts, and build awareness of what your body is communicating — 
+          in three to five minutes per day.</p>
+        </li>
+        <li class="benefit-item">
+          <h4>Brock Book Guide (BBG)</h4>
+          <p>Use any book you're currently reading as a coaching anchor. You'll receive a 
+          structured reflection guide for that title, then join a 30-minute 1:1 call with Brock 
+          to work through your insights. Learning that lands in the body, not just the mind.</p>
+        </li>
+        <li class="benefit-item">
+          <h4>1-on-1 Somatic Exercise Calls</h4>
+          <p>Monthly private video calls where Brock guides you through targeted somatic exercises — 
+          breath, movement, and body-based regulation practices tailored to what your system needs. 
+          Sessions are recorded for your review.</p>
+        </li>
+        <li class="benefit-item">
+          <h4>Nervous System Reset Worksheets</h4>
+          <p>Print-or-fill worksheets built on somatic and polyvagal frameworks. Topics include 
+          breath mapping, body scanning, stress response identification, and window-of-tolerance 
+          tracking. New worksheets added monthly.</p>
+        </li>
+        <li class="benefit-item">
+          <h4>Access to Bodywork Sessions <span style="font-family:var(--ff-body);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:var(--cream);border:1px solid var(--gold-light);padding:0.15rem 0.55rem;border-radius:2px;vertical-align:middle;margin-left:0.4rem;">Available at 30 days</span></h4>
+          <p>Houston-based members unlock private in-person bodywork sessions after 30 days of membership. The waiting period is intentional — it gives Brock time to learn the signals and patterns of your body through the Check-In App and 1:1 calls, so every session is customized to exactly what your nervous system needs.</p>
+          <p style="margin-top:0.5rem;">Sessions focus on calming and parasympathetic restoration — stretching, breathwork, full-body relaxation massage, and polarity therapy. The goal is to calm the body, not excite it.</p>
+        </li>
+      </ul>
+
+      <div style="margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--cream-mid);">
+        <span class="eyebrow" style="margin-bottom:0.9rem;">Explore the tools</span>
+        <div class="tool-buttons">
+          <a href="#waitlist" class="btn-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+              <line x1="9" y1="8" x2="15" y2="8"/>
+              <line x1="9" y1="12" x2="15" y2="12"/>
+              <line x1="9" y1="16" x2="13" y2="16"/>
+            </svg>
+            Brock Check-In App
+          </a>
+          <a href="#waitlist" class="btn-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            Brock Book Guide
+          </a>
+          <a href="#waitlist" class="btn-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="12" y2="17"/>
+            </svg>
+            NS Reset Worksheets
+          </a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <a href="#waitlist" class="btn btn-primary">Join Level One — $39/mo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE RESOURCE -->
+  <section class="free-resource">
+    <div class="container">
+      <span class="eyebrow">Free resource</span>
+      <h2>The Somatic Reset Guide</h2>
+      <p>
+        A short educational guide explaining why chronic stress leaves the body feeling wired, 
+        tense, and disconnected — and how somatic awareness begins rebuilding connection.
+      </p>
+      <div class="resource-box">
+        <ul>
+          <li>Why chronic stress keeps the body in survival mode</li>
+          <li>How stress disconnects sensation and body awareness</li>
+          <li>Why relaxation alone often does not work</li>
+          <li>A simple practice to begin reconnecting with your body</li>
+        </ul>
+        <a href="https://brockjohn.com/free-somatic-guide" class="btn btn-outline">Read the Free Somatic Reset Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE -->
+  <section class="practice">
+    <div class="container">
+      <span class="eyebrow">Try this 60-second practice</span>
+      <h2>Body Awareness Reset</h2>
+      <ol class="steps">
+        <li>Sit comfortably and close your eyes.</li>
+        <li>Take three slow breaths, letting each exhale be longer than the inhale.</li>
+        <li>Notice where your body feels tight, heavy, or held.</li>
+        <li>Observe the sensation without trying to change it.</li>
+      </ol>
+      <p class="practice-note">
+        The goal is awareness, not fixing. Regulation is a skill the body can learn again.
+      </p>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section class="app-section">
+    <div class="container">
+      <div class="app-inner">
+        <div class="app-text">
+          <span class="app-label">Brock Somatic Check-In App</span>
+          <h2>A daily bridge between stress and support</h2>
+          <p>
+            The Check-In App gives members a practical daily layer before and between deeper 
+            sessions. Five gentle questions — simple 1–10 sliders — help you track your nervous 
+            system patterns, receive a grounded supportive response, and follow one brief somatic practice.
+          </p>
+          <p style="margin-top:0.75rem;">
+            Brock reviews your check-ins before each call so sessions start exactly where you are.
+          </p>
+        </div>
+        <div class="app-img">
+          <!-- Place check-in-app.png in your /public folder -->
+          <img
+            src="/check-in-app.png"
+            alt="Brock Somatic Check-In App — nervous system load tracker"
+            onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div style=\'padding:2rem;background:linear-gradient(135deg,#1a2e2e,#0f1f1f);border-radius:8px;color:#5f9ea0;font-family:monospace;font-size:0.8rem;min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:0.75rem;\'><div style=\'font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#4a8a8a;\'>Brock Somatic Check-In App</div><div style=\'font-size:1.1rem;font-weight:600;color:#e0f0f0;\'>Notice what your body is signaling.</div><div style=\'background:rgba(255,255,255,0.06);padding:0.75rem;border-radius:6px;\'><div style=\'font-size:0.65rem;color:#4a8a8a;margin-bottom:0.25rem;\'>Average nervous system load</div><div style=\'font-size:1rem;color:#e0f0f0;font-weight:600;\'>Lower load &nbsp; <span style=\'background:#2a6a6a;color:#e0f0f0;padding:0.2rem 0.5rem;border-radius:50%;font-size:0.8rem;\'>5</span></div></div><div style=\'font-size:0.75rem;color:#4a8a8a;\'>Add check-in-app.png to /public folder</div></div>';"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What members say</h2>
+      <p>Calm, structured, body-aware support designed to feel practical in real life.</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <blockquote>
+            "This gave me a calmer way to check in with my body after long shifts. 
+            It feels supportive, clear, and actually doable in real life."
+          </blockquote>
+          <cite>Danielle R. &nbsp;·&nbsp; Nurse Member</cite>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            "I finally had language for what my body was doing under stress. 
+            The practices feel gentle, professional, and grounding."
+          </blockquote>
+          <cite>Marissa T. &nbsp;·&nbsp; Healthcare Professional</cite>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            "The membership feels like a steady layer of support instead of more pressure. 
+            I appreciate how calm and structured everything is."
+          </blockquote>
+          <cite>Alicia S. &nbsp;·&nbsp; Teacher Member</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What is included inside the membership?</summary>
+          <div class="faq-answer">
+            Members receive the Brock Check-In App, Brock Book Guide (BBG) access, 
+            monthly 1-on-1 somatic exercise calls, Nervous System Reset Worksheets, 
+            and priority access to in-person Houston bodywork sessions.
+          </div>
+        </details>
+        <details>
+          <summary>Is this medical care or therapy?</summary>
+          <div class="faq-answer">
+            No. This is educational wellness support focused on somatic awareness, 
+            nervous system literacy, and practical regulation tools. It is not medical 
+            advice, diagnosis, or therapy.
+          </div>
+        </details>
+        <details>
+          <summary>Who is this designed for?</summary>
+          <div class="faq-answer">
+            Level One Bodywork is designed for people in high-stress roles — nurses, 
+            healthcare workers, teachers, caregivers, and anyone who feels chronically 
+            tense, wired, numb, or emotionally exhausted and wants practical support.
+          </div>
+        </details>
+        <details>
+          <summary>What does the Check-In App do?</summary>
+          <div class="faq-answer">
+            The Check-In App is a guided daily self-assessment that takes 3–5 minutes. 
+            It helps you track your nervous system state over time and identify patterns 
+            of activation or shutdown. Brock reviews your entries before each 1:1 call.
+          </div>
+        </details>
+        <details>
+          <summary>Can I cancel any time?</summary>
+          <div class="faq-answer">
+            Yes. Membership is month-to-month and can be cancelled any time with 
+            24-hour notice before your next renewal date. No commitments required.
+          </div>
+        </details>
+        <details>
+          <summary>How long does Level One take?</summary>
+          <div class="faq-answer">
+            Level One training varies per woman, but most members move through it in 
+            <strong>3 to 6 months</strong>. There is no fixed endpoint — progress is 
+            determined by the signals and patterns your body shows over time, not a 
+            countdown clock.<br/><br/>
+            Some women arrive carrying years of chronic tension and may spend closer to 
+            6 months building a consistent regulation foundation. Others shift more quickly 
+            and are ready for deeper work sooner. Both are normal. The 1:1 calls and 
+            Check-In App data help Brock track your progress and let you know when your 
+            body is genuinely ready to move forward.
+          </div>
+        </details>
+        <details>
+          <summary>What is the Brock Book Guide?</summary>
+          <div class="faq-answer">
+            The BBG is a structured coaching tool that uses your current book as a 
+            reflection anchor. You receive a guided worksheet for that title, then 
+            join a 30-minute 1:1 call with Brock to work through the insights — 
+            connecting what you're reading to what your body is experiencing.
+          </div>
+        </details>
+        <details>
+          <summary>Why is there a 30-day waiting period for bodywork?</summary>
+          <div class="faq-answer">
+            The 30-day period is not a gatekeeping measure — it is preparation. Before your first 
+            session, Brock uses your Check-In App data, worksheets, and 1:1 calls to understand 
+            the specific signals and patterns of your nervous system. That way, your first bodywork 
+            session is not generic. It is built around what your body has actually been communicating 
+            for the past month. Members who go through this process consistently report sessions that 
+            feel far more targeted and effective than walk-in bodywork.
+          </div>
+        </details>
+        <details>
+          <summary>What kind of bodywork does Level One use — and what does it not use?</summary>
+          <div class="faq-answer">
+            Level One bodywork is designed to guide the body into a parasympathetic (rest and restore) 
+            state. That means sessions focus on methods that calm and relax the nervous system — 
+            therapeutic stretching, breathwork, full-body relaxation massage, and polarity therapy.<br/><br/>
+            What Level One does <em>not</em> use: deep tissue work, stimulating pressure, or techniques 
+            designed to excite or activate the body. The goal is the opposite — to help the body 
+            experience safety, let go of held tension, and practice genuine rest. This distinction 
+            matters because many people in chronic stress have never received bodywork calibrated to 
+            their actual nervous system state.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section class="sessions" id="sessions">
+    <div class="container">
+      <span class="eyebrow">Houston private sessions</span>
+      <h2>Bodywork that calms the body — not excites it.</h2>
+      <p>
+        Level One bodywork is rooted in one principle: guiding the nervous system toward a 
+        parasympathetic state. Every session uses methods that relax and restore — 
+        therapeutic stretching, breathwork, full-body relaxation massage, and polarity therapy. 
+        Not deep tissue. Not stimulating pressure. Calm, steady, and body-led.
+      </p>
+      <div style="margin-block:1.5rem;padding:1rem 1.25rem;background:var(--cream);border-left:3px solid var(--gold);border-radius:2px;">
+        <p style="font-size:0.88rem;color:var(--brown);line-height:1.6;">
+          <strong>30-day waiting period for Houston members.</strong> Bodywork is available after your first 30 days of membership. This time is used to learn the signals and patterns of your body through the Check-In App and 1:1 calls — so your first session is fully customized to your nervous system, not generic.
+        </p>
+      </div>
+      <div class="session-cards">
+        <div class="session-card">
+          <div class="session-price">$189</div>
+          <h4>Alpha Session</h4>
+          <p style="font-size:0.78rem;color:var(--gold);margin-bottom:0.75rem;">60, 90, or 120 minutes</p>
+          <ul class="session-features">
+            <li>Full-body relaxation massage</li>
+            <li>Focus: calming, downshifting, safety</li>
+            <li>Gentle, rhythmic, parasympathetic</li>
+            <li>Breathwork &amp; therapeutic stretching</li>
+          </ul>
+        </div>
+        <div class="session-card">
+          <div class="session-price">$225</div>
+          <h4>Omega Session</h4>
+          <p style="font-size:0.78rem;color:var(--gold);margin-bottom:0.75rem;">90 minutes</p>
+          <ul class="session-features">
+            <li>Releases stored tension in the body</li>
+            <li>Focus: depth, structure, full reset</li>
+            <li>Slow, deliberate, restorative</li>
+            <li>Polarity therapy &amp; somatic integration</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;font-size:0.8rem;color:var(--amber-light);font-style:italic;">
+        Available to Houston members after 30 days. Request via email or WhatsApp after your first 1:1 call.
+      </p>
+    </div>
+  </section>
+
+  <!-- WAITLIST / JOIN -->
+  <section class="waitlist" id="waitlist">
+    <div class="container">
+      <span class="eyebrow">Join now</span>
+      <h2>Begin with Level One Bodywork.</h2>
+      <p>
+        Steady somatic support, practical tools, and — when you're ready — 
+        private bodywork in Houston.
+      </p>
+      <div class="waitlist-perks">
+        <span class="waitlist-perk">40% off first month</span>
+        <span class="waitlist-perk">$39/month after</span>
+        <span class="waitlist-perk">Cancel any time</span>
+        <span class="waitlist-perk">5 member tools</span>
+      </div>
+      <form class="waitlist-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="first-name">First name</label>
+          <input type="text" id="first-name" placeholder="Your first name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Are you in Houston?</label>
+          <select id="location" required>
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes, I am in Houston</option>
+            <option value="no">No, I want digital membership only</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-waitlist">Join Level One Bodywork →</button>
+        <p class="form-legal">
+          Education only &nbsp;·&nbsp; Not medical advice &nbsp;·&nbsp; 
+          Consult a qualified health professional for medical concerns
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Brock Somatic Bodywork</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#sessions">Sessions</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#waitlist">Join Now</a></li>
+      </ul>
+      <p class="footer-legal">
+        Brock John &nbsp;·&nbsp; Somatic Nervous System Educator &nbsp;·&nbsp; Houston, Texas<br />
+        <a href="https://brockjohn.com" style="color:var(--gold);text-decoration:none;">brockjohn.com</a>
+        &nbsp;·&nbsp; 346-219-1603
+      </p>
+      <p class="footer-legal" style="margin-top:0.25rem;">
+        Education only &nbsp;·&nbsp; Not medical advice &nbsp;·&nbsp; 
+        Consult a qualified health professional for medical concerns
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form   = e.target;
+      const btn    = form.querySelector('.btn-waitlist');
+      const name   = form.querySelector('#first-name').value.trim();
+      const email  = form.querySelector('#email').value.trim();
+      const loc    = form.querySelector('#location').value;
+
+      // UI: loading state
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      try {
+        const res = await fetch('/api/join', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, location: loc })
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.message || `Server error ${res.status}`);
+        }
+
+        // Success
+        btn.textContent = 'You\'re in — welcome to Level One ✓';
+        btn.style.background = '#2E1F0E';
+        btn.style.color = '#C9A96E';
+        btn.style.opacity = '1';
+        form.querySelectorAll('input, select').forEach(el => el.disabled = true);
+
+      } catch (err) {
+        console.error('Join error:', err);
+        btn.textContent = 'Something went wrong — try again';
+        btn.style.background = '#8B3A3A';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        setTimeout(() => {
+          btn.textContent = 'Join Level One Bodywork →';
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 4000);
+      }
+    }
+  </script>
+
+</body>
+</html>
