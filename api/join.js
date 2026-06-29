@@ -43,7 +43,8 @@ export default async function handler(req, res) {
 
   // ── Confirmation email to member ────────────────────────────
   const confirmPayload = {
-    from: 'Brock John <bhhm2020@gmail.com>',
+    from: 'Brock John <hello@brockjohn.com>',
+    reply_to: 'bhhm2020@gmail.com',
     to:   [email],
     subject: `Welcome to Level One Bodywork, ${name}`,
     html: `
