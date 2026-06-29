@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/join", "dest": "/api/join.js" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
