@@ -1,0 +1,10 @@
+{
+  "name": "level-one-bodywork",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}
