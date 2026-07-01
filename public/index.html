@@ -1,1746 +1,1815 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A grounded bodywork and somatic support membership for people ready to regulate, reconnect, and restore." />
-  <title>Level One Bodywork — Brock Somatic Bodywork</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ── Reset ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ── Tokens ─────────────────────────────────────────────── */
-    :root {
-      --cream:       #F5EED8;
-      --cream-mid:   #EFE5C5;
-      --gold:        #C9A96E;
-      --gold-light:  #DEC28D;
-      --brown:       #2E1F0E;
-      --amber:       #6B4C2A;
-      --amber-light: #8B6340;
-      --white:       #FFFFFF;
-      --text:        #2E1F0E;
-      --text-muted:  #6B4C2A;
-
-      --ff-display: 'Fraunces', Georgia, serif;
-      --ff-body:    'Hanken Grotesk', system-ui, sans-serif;
-
-      --max: 720px;
-      --gutter: clamp(1.25rem, 5vw, 2.5rem);
-      --section-gap: 5rem;
-    }
-
-    /* ── Base ────────────────────────────────────────────────── */
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--ff-body);
-      font-size: 1rem;
-      line-height: 1.65;
-      color: var(--text);
-      background: var(--white);
-    }
-
-    /* ── Utility ─────────────────────────────────────────────── */
-    .container {
-      width: 100%;
-      max-width: var(--max);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-    }
-
-    .eyebrow {
-      font-family: var(--ff-body);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--cream-mid);
-      margin-block: 2.5rem;
-    }
-
-    /* ── Announcement bar ─────────────────────────────────────── */
-    .announce-bar {
-      background: var(--brown);
-      color: var(--gold-light);
-      text-align: center;
-      font-size: 0.78rem;
-      font-family: var(--ff-body);
-      letter-spacing: 0.05em;
-      padding: 0.55rem var(--gutter);
-    }
-
-    /* ── Nav ─────────────────────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--cream-mid);
-      padding-block: 1rem;
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-family: var(--ff-display);
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--brown);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .brand-logo-img {
-      width: 34px;
-      height: 34px;
-      object-fit: cover;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    .nav-logo span {
-      font-style: italic;
-      color: var(--amber);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.82rem;
-      color: var(--amber-light);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--brown); }
-
-    .nav-cta {
-      background: var(--brown);
-      color: var(--cream) !important;
-      padding: 0.4rem 1rem;
-      border-radius: 2px;
-    }
-
-    .nav-cta:hover { background: var(--amber) !important; color: var(--white) !important; }
-
-    /* ── Buttons ─────────────────────────────────────────────── */
-    .btn {
-      display: inline-block;
-      font-family: var(--ff-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.75rem 1.75rem;
-      border-radius: 2px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--brown);
-      color: var(--cream);
-    }
-
-    .btn-primary:hover {
-      background: var(--amber);
-      color: var(--white);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--brown);
-      border: 1.5px solid var(--gold);
-    }
-
-    .btn-outline:hover {
-      background: var(--cream);
-    }
-
-    /* ── HERO ─────────────────────────────────────────────────── */
-    .hero {
-      background: var(--cream);
-      padding-block: 5rem 4rem;
-      border-bottom: 1px solid var(--cream-mid);
-    }
-
-    .hero .container {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .hero-label {
-      font-family: var(--ff-body);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-family: var(--ff-display);
-      font-size: clamp(2rem, 5.5vw, 3rem);
-      font-weight: 300;
-      line-height: 1.18;
-      color: var(--brown);
-      margin-bottom: 1.25rem;
-      max-width: 560px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--amber);
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--amber-light);
-      max-width: 480px;
-      margin-bottom: 2.25rem;
-      line-height: 1.65;
-    }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--cream-mid);
-    }
-
-    .pill {
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 100px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.78rem;
-      color: var(--amber);
-      font-weight: 500;
-    }
-
-    /* founder strip */
-    .founder-strip {
-      background: var(--brown);
-      padding-block: 1.25rem;
-    }
-
-    .founder-strip .container {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .founder-stat {
-      text-align: center;
-      color: var(--cream);
-    }
-
-    .founder-stat .stat-label {
-      display: block;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 0.25rem;
-    }
-
-    .founder-stat .stat-val {
-      font-family: var(--ff-display);
-      font-size: 1.5rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    /* ── SECTION base ─────────────────────────────────────────── */
-    section {
-      padding-block: var(--section-gap);
-    }
-
-    section h2 {
-      font-family: var(--ff-display);
-      font-size: clamp(1.6rem, 4vw, 2.1rem);
-      font-weight: 300;
-      line-height: 1.25;
-      color: var(--brown);
-      margin-bottom: 1rem;
-    }
-
-    section h3 {
-      font-family: var(--ff-display);
-      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 0.75rem;
-    }
-
-    section p {
-      color: var(--amber-light);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* ── WHY SECTION ─────────────────────────────────────────── */
-    .why { background: var(--white); }
-
-    .why-body {
-      margin-bottom: 2rem;
-    }
-
-    .outcome-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-
-    .outcome-item {
-      background: var(--cream);
-      border-left: 2px solid var(--gold);
-      padding: 0.6rem 0.85rem;
-      font-size: 0.82rem;
-      color: var(--amber);
-      font-weight: 500;
-    }
-
-    /* ── PROBLEM / REFRAME ────────────────────────────────────── */
-    .problem { background: var(--cream); }
-
-    .problem-card {
-      background: var(--white);
-      border: 1px solid var(--cream-mid);
-      border-radius: 4px;
-      padding: 1.75rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .problem-card .card-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ── WHO ─────────────────────────────────────────────────── */
-    .who { background: var(--white); }
-
-    .who-list {
-      list-style: none;
-      margin-top: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .who-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.95rem;
-      color: var(--amber-light);
-    }
-
-    .who-list li::before {
-      content: '';
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* ── METHOD ─────────────────────────────────────────────── */
-    .method { background: var(--cream); }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .method-card {
-      padding: 1.5rem;
-      background: var(--white);
-      border-top: 2px solid var(--gold);
-    }
-
-    .method-card h4 {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 0.5rem;
-    }
-
-    .method-card p {
-      font-size: 0.85rem;
-    }
-
-    /* ── MEMBERSHIP ─────────────────────────────────────────── */
-    .membership { background: var(--white); }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .price-num {
-      font-family: var(--ff-display);
-      font-size: 2.25rem;
-      font-weight: 300;
-      color: var(--brown);
-      font-style: italic;
-    }
-
-    .price-per {
-      font-size: 0.85rem;
-      color: var(--amber-light);
-    }
-
-    .price-note {
-      font-size: 0.82rem;
-      color: var(--gold);
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-
-    .benefit-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .benefit-item {
-      border-bottom: 1px solid var(--cream-mid);
-      padding-bottom: 1.5rem;
-    }
-
-    .benefit-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .benefit-item h4 {
-      font-family: var(--ff-display);
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 0.4rem;
-    }
-
-    .benefit-item p {
-      font-size: 0.9rem;
-    }
-
-    /* ── FREE RESOURCE ───────────────────────────────────────── */
-    .free-resource {
-      background: var(--cream);
-    }
-
-    .resource-box {
-      background: var(--white);
-      border: 1px solid var(--cream-mid);
-      border-radius: 4px;
-      padding: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .resource-box ul {
-      list-style: none;
-      margin: 1rem 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .resource-box ul li {
-      font-size: 0.9rem;
-      color: var(--amber-light);
-      padding-left: 1.1rem;
-      position: relative;
-    }
-
-    .resource-box ul li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    /* ── PRACTICE ────────────────────────────────────────────── */
-    .practice { background: var(--white); }
-
-    .steps {
-      list-style: none;
-      counter-reset: steps;
-      margin: 1.5rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .steps li {
-      counter-increment: steps;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      font-size: 0.95rem;
-      color: var(--amber-light);
-    }
-
-    .steps li::before {
-      content: counter(steps);
-      font-family: var(--ff-display);
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--gold);
-      min-width: 1.25rem;
-      line-height: 1.4;
-    }
-
-    .practice-note {
-      font-style: italic;
-      color: var(--gold);
-      font-size: 0.88rem;
-      margin-top: 0.5rem;
-    }
-
-    /* ── ABOUT BROCK ─────────────────────────────────────────── */
-    .about { background: var(--brown); }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-photo-wrap {
-      position: relative;
-    }
-
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 3px;
-      display: block;
-    }
-
-    .about-photo-placeholder {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: rgba(201,169,110,0.08);
-      border: 1px dashed rgba(201,169,110,0.25);
-      border-radius: 3px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      color: rgba(201,169,110,0.35);
-    }
-
-    .about-photo-placeholder svg {
-      width: 36px;
-      height: 36px;
-    }
-
-    .about-photo-placeholder span {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .about-photo-note {
-      font-size: 0.65rem;
-      color: rgba(201,169,110,0.3);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 0.6rem;
-      text-align: center;
-    }
-
-    .about-text .eyebrow { color: var(--gold-light); }
-
-    .about-text h2 {
-      color: var(--cream);
-      margin-bottom: 1.25rem;
-    }
-
-    .about-text p {
-      color: rgba(245,238,216,0.72);
-      margin-bottom: 0.85rem;
-    }
-
-    .about-creds {
-      list-style: none;
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .about-creds li {
-      font-size: 0.85rem;
-      color: var(--gold-light);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .about-creds li::before {
-      content: '';
-      width: 16px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 640px) {
-      .about-inner {
-        grid-template-columns: 1fr;
-      }
-      .about-photo-wrap { max-width: 220px; }
-    }
-
-    /* ── APP ─────────────────────────────────────────────────── */
-    .app-section { background: var(--cream); }
-
-    .app-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .app-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .app-img {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(46,31,14,0.18);
-    }
-
-    .app-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-    }
-
-    /* ── TESTIMONIALS ────────────────────────────────────────── */
-    .testimonials { background: var(--white); }
-
-    .testimonial-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .testimonial-card {
-      background: var(--cream);
-      border-left: 3px solid var(--gold);
-      padding: 1.5rem 1.75rem;
-    }
-
-    .testimonial-card blockquote {
-      font-family: var(--ff-display);
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--brown);
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-card cite {
-      font-style: normal;
-      font-size: 0.78rem;
-      color: var(--amber-light);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── FAQ ─────────────────────────────────────────────────── */
-    .faq { background: var(--cream); }
-
-    .faq-list {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    details {
-      border-bottom: 1px solid var(--cream-mid);
-    }
-
-    details summary {
-      padding: 1.1rem 0;
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--brown);
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    details summary::-webkit-details-marker { display: none; }
-
-    details summary::after {
-      content: '+';
-      font-size: 1.2rem;
-      color: var(--gold);
-      font-weight: 300;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
-
-    details[open] summary::after {
-      transform: rotate(45deg);
-    }
-
-    details .faq-answer {
-      padding-bottom: 1.1rem;
-      font-size: 0.9rem;
-      color: var(--amber-light);
-      line-height: 1.7;
-    }
-
-    /* ── SESSIONS ────────────────────────────────────────────── */
-    .sessions { background: var(--white); }
-
-    .session-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .session-card {
-      border: 1px solid var(--cream-mid);
-      padding: 1.75rem;
-    }
-
-    .session-card .session-price {
-      font-family: var(--ff-display);
-      font-size: 1.6rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--brown);
-      margin-bottom: 0.25rem;
-    }
-
-    .session-card .session-price-note {
-      font-family: var(--ff-body);
-      font-size: 0.78rem;
-      font-style: normal;
-      font-weight: 500;
-      color: var(--amber);
-    }
-
-    .session-card h4 {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 1rem;
-    }
-
-    .session-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .session-features li {
-      font-size: 0.85rem;
-      color: var(--amber-light);
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .session-features li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    /* ── WAITLIST ─────────────────────────────────────────────── */
-    .waitlist {
-      background: var(--brown);
-      padding-block: var(--section-gap);
-    }
-
-    .waitlist .eyebrow { color: var(--gold-light); }
-
-    .waitlist h2 {
-      color: var(--cream);
-    }
-
-    .waitlist p {
-      color: var(--gold-light);
-    }
-
-    .waitlist-perks {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-block: 1.25rem 2rem;
-    }
-
-    .waitlist-perk {
-      background: rgba(201,169,110,0.15);
-      border: 1px solid rgba(201,169,110,0.3);
-      border-radius: 2px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.78rem;
-      color: var(--gold-light);
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-    .waitlist-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      max-width: 420px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .form-group label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-    }
-
-    .form-group input,
-    .form-group select {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(201,169,110,0.3);
-      border-radius: 2px;
-      padding: 0.7rem 0.9rem;
-      font-family: var(--ff-body);
-      font-size: 0.92rem;
-      color: var(--cream);
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input::placeholder { color: rgba(201,169,110,0.45); }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--gold);
-    }
-
-    .form-group select {
-      appearance: none;
-      cursor: pointer;
-    }
-
-    .form-group select option {
-      background: var(--brown);
-      color: var(--cream);
-    }
-
-    .btn-waitlist {
-      background: var(--gold);
-      color: var(--brown);
-      font-family: var(--ff-body);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 2px;
-      padding: 0.9rem 1.5rem;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s;
-    }
-
-    .btn-waitlist:hover { background: var(--gold-light); }
-
-    .form-legal {
-      font-size: 0.72rem;
-      color: rgba(201,169,110,0.5);
-      line-height: 1.5;
-    }
-
-    /* ── FOOTER ──────────────────────────────────────────────── */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--cream-mid);
-      padding-block: 2rem;
-    }
-
-    .footer-inner {
-      max-width: var(--max);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .footer-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--amber);
-    }
-
-    .footer-logo .brand-logo-img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      font-size: 0.8rem;
-      color: var(--amber-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--brown); }
-
-    .footer-legal {
-      font-size: 0.72rem;
-      color: var(--gold);
-      line-height: 1.6;
-    }
-
-    /* ── TOOL BUTTONS ────────────────────────────────────────── */
-    .tool-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-
-    .btn-tool {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-family: var(--ff-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      color: var(--brown);
-      background: var(--cream);
-      border: 1.5px solid var(--gold);
-      border-radius: 2px;
-      padding: 0.6rem 1.15rem;
-      transition: background 0.18s, border-color 0.18s, color 0.18s;
-      white-space: nowrap;
-    }
-
-    .btn-tool:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--white);
-    }
-
-    .btn-tool svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-      stroke: currentColor;
-    }
-
-    /* ── RESPONSIVE ──────────────────────────────────────────── */
-    @media (max-width: 640px) {
-      :root { --section-gap: 3.5rem; }
-
-      .nav-links { display: none; }
-
-      .app-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .app-img {
-        aspect-ratio: 4/3;
-        order: -1;
-      }
-
-      .session-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .founder-strip .container {
-        gap: 1.5rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind Over Mood — Worksheets</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5EED8;
+    --cream-dark: #EDE3C3;
+    --gold: #C9A96E;
+    --gold-light: #DFC49A;
+    --gold-dark: #A8824A;
+    --brown: #2E1F0E;
+    --brown-mid: #4A3220;
+    --amber: #6B4C2A;
+    --amber-light: #8A6340;
+    --text-body: #3D2C1A;
+    --text-muted: #7A6048;
+    --border: rgba(201, 169, 110, 0.35);
+    --border-strong: rgba(201, 169, 110, 0.65);
+    --surface: #FDFAF2;
+    --surface-alt: #F9F2E0;
+  }
+
+  /* body styles moved to site-header/footer block below */
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .page-header .eyebrow {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+
+  .page-header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1.5px solid var(--border-strong);
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.18s, border-color 0.18s;
+    margin-bottom: -1.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-tab:hover { color: var(--amber); }
+
+  .nav-tab.active {
+    color: var(--brown);
+    border-bottom-color: var(--gold);
+  }
+
+  .worksheet { display: none; }
+  .worksheet.active { display: block; }
+
+  .ws-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ws-number {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ws-title-block h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .ws-title-block .ws-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 560px;
+  }
+
+  .intro-box {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .field-group { margin-bottom: 1.75rem; }
+
+  .field-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+
+  .field-sublabel {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  textarea, input[type="text"] {
+    width: 100%;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-body);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    resize: vertical;
+    line-height: 1.6;
+    transition: border-color 0.15s;
+  }
+
+  textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
+  }
+
+  textarea { min-height: 90px; }
+  textarea.sm { min-height: 60px; }
+  textarea.lg { min-height: 130px; }
+
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .row-2, .row-3 { grid-template-columns: 1fr; }
+  }
+
+  .thought-record-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .card .card-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .mood-tracker {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mood-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+  }
+
+  .mood-item label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .mood-item .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mood-item input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold) 0%, var(--gold) var(--pct,50%), var(--border-strong) var(--pct,50%), var(--border-strong) 100%);
+    border-radius: 2px;
+    outline: none;
+  }
+
+  .mood-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+
+  .mood-item .mood-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brown);
+    min-width: 22px;
+    text-align: right;
+  }
+
+  .belief-bar-wrapper {
+    margin-bottom: 1.75rem;
+  }
+
+  .belief-bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .belief-bar-label span:first-child {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-body);
+  }
+
+  .belief-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold-dark);
+  }
+
+  .belief-bar-wrapper input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 4px;
+    background: linear-gradient(to right, var(--gold) 0%, var(--gold) var(--pct,50%), var(--border-strong) var(--pct,50%), var(--border-strong) 100%);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .belief-bar-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .evidence-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) { .evidence-cols { grid-template-columns: 1fr; } }
+
+  .evidence-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .evidence-col .col-head {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .evidence-col.supports .col-head { color: #5A7A3A; }
+  .evidence-col.against .col-head { color: var(--amber-light); }
+
+  .evidence-list { list-style: none; }
+
+  .evidence-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 0.5rem;
+  }
+
+  .evidence-list li::before {
+    content: '—';
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .evidence-list li input[type="text"] {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 2px 0;
+    font-size: 13px;
+    color: var(--text-body);
+  }
+
+  .evidence-list li input[type="text"]:focus {
+    border-bottom-color: var(--gold);
+    box-shadow: none;
+    outline: none;
+  }
+
+  .add-btn {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold-dark);
+    background: none;
+    border: 1px dashed var(--border-strong);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .add-btn:hover {
+    background: rgba(201, 169, 110, 0.08);
+    border-color: var(--gold);
+  }
+
+  .distortion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chip {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .chip:hover { border-color: var(--gold); color: var(--amber); }
+
+  .chip.selected {
+    background: rgba(201, 169, 110, 0.15);
+    border-color: var(--gold);
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .thought-arrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .thought-box {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 80px;
+    font-size: 13.5px;
+    color: var(--text-body);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .thought-box.editable {
+    outline: none;
+    transition: border-color 0.15s;
+    cursor: text;
+  }
+
+  .thought-box.editable:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12); }
+  .thought-box.editable:empty::before { content: attr(data-ph); color: var(--text-muted); font-style: italic; font-size: 13px; }
+
+  .arrow-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .action-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--brown);
+    color: var(--cream);
+    border: none;
+    border-radius: 6px;
+    padding: 0.65rem 1.5rem;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.18s;
+  }
+
+  .btn-primary:hover { background: var(--brown-mid); }
+
+  .btn-secondary {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    background: transparent;
+    color: var(--amber);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    padding: 0.65rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-secondary:hover { background: rgba(201, 169, 110, 0.08); border-color: var(--gold); }
+
+  .progress-save {
+    font-size: 12px;
+    color: var(--text-muted);
+    align-self: center;
+    margin-left: auto;
+    font-weight: 300;
+  }
+
+  .reflection-card {
+    background: rgba(201, 169, 110, 0.07);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .reflection-card .rc-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.6rem;
+  }
+
+  .reflection-card p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--brown-mid);
+    line-height: 1.7;
+  }
+
+  .step-tracker {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .step-item {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    background: var(--surface);
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  .step-item:last-child { border-right: none; }
+  .step-item.done { background: rgba(201, 169, 110, 0.12); color: var(--amber); }
+  .step-item.current { background: var(--brown); color: var(--cream); }
+
+  .hot-cross-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hcb-cell {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .hcb-cell .hcb-head {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gold-dark);
+    margin-bottom: 0.6rem;
+  }
+
+  .hcb-cell .hcb-icon {
+    font-size: 1.1rem;
+    margin-right: 4px;
+    vertical-align: -2px;
+  }
+
+  .save-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .save-indicator.show { opacity: 1; }
+  .save-indicator::before { content: '✓'; color: #6A8F4A; font-weight: 500; }
+
+  .btn-email {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    background: transparent;
+    color: var(--gold-dark);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+
+  .btn-email:hover { background: rgba(201, 169, 110, 0.1); border-color: var(--gold-dark); }
+  .btn-email:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .btn-email svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .email-status {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    display: none;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .email-status.sending {
+    display: inline-flex;
+    color: var(--text-muted);
+    background: rgba(201,169,110,0.08);
+  }
+
+  .email-status.sent {
+    display: inline-flex;
+    color: #3D6A1F;
+    background: rgba(90,140,50,0.08);
+  }
+
+  .email-status.error {
+    display: inline-flex;
+    color: #8B3A2A;
+    background: rgba(180,80,60,0.08);
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .spin { animation: spin 0.9s linear infinite; display: inline-block; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1.75rem 0;
+  }
+
+  .ws5-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+  }
+
+  .ws5-table th {
+    background: var(--surface-alt);
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gold-dark);
+    border-bottom: 1.5px solid var(--border-strong);
+  }
+
+  .ws5-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .ws5-table td input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 2px 0;
+    font-size: 13px;
+  }
+
+  .ws5-table td input[type="text"]:focus {
+    border-bottom-color: var(--gold);
+    box-shadow: none;
+    outline: none;
+  }
+
+  .ws5-table tr:last-child td { border-bottom: none; }
+
+  .completion-banner {
+    display: none;
+    background: rgba(106, 143, 74, 0.08);
+    border: 1px solid rgba(106, 143, 74, 0.3);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 13.5px;
+    color: #3D5A27;
+    line-height: 1.6;
+  }
+
+  .completion-banner.visible { display: block; }
+
+  .completion-banner strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    font-size: 14px;
+  }
+
+  .site-header {
+    background: var(--brown);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .site-header-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .site-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    text-decoration: none;
+  }
+
+  .site-brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .site-brand-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .site-brand-divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(201,169,110,0.4);
+    margin: 0 12px;
+    flex-shrink: 0;
+  }
+
+  .site-brand-sub {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .site-header-year {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(201,169,110,0.55);
+    text-transform: uppercase;
+  }
+
+  .site-footer {
+    background: var(--brown);
+    margin-top: 5rem;
+    width: 100%;
+  }
+
+  .site-footer-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem;
+    border-top: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .footer-brand-block .footer-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .footer-brand-block .footer-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .footer-brand-block .footer-tagline {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.6);
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(245,238,216,0.55);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-right .footer-copy {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    color: rgba(201,169,110,0.45);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  .footer-ornament {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(201,169,110,0.2);
+    font-style: italic;
+    line-height: 1;
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  @media (max-width: 540px) {
+    .site-footer-inner { grid-template-columns: 1fr; }
+    .footer-right { text-align: left; }
+    .footer-ornament { text-align: left; }
+  }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    min-height: 100vh;
+    padding: 0 0 0;
+  }
+
+  .page-content {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+
+  .client-email-bar {
+    background: var(--surface-alt);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .client-email-bar label {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .client-email-bar input[type="email"] {
+    flex: 1;
+    min-width: 200px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-body);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    padding: 0.5rem 0.85rem;
+    transition: border-color 0.15s;
+  }
+
+  .client-email-bar input[type="email"]:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
+  }
+
+  .client-email-bar .email-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
-  <!-- Announce bar -->
-  <div class="announce-bar">
-    Limited time &nbsp;·&nbsp; <strong>40% off your first month</strong> for all members &nbsp;·&nbsp; <a href="#waitlist" style="color:var(--gold-light);text-decoration:underline;text-underline-offset:3px;">Join now →</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="https://brockjohn.com" class="site-brand" style="text-decoration:none;">
+      <span class="site-brand-name"><em>Brock John</em></span>
+      <span class="site-brand-divider"></span>
+      <span class="site-brand-sub">Somatic Bodywork</span>
+    </a>
+    <span class="site-header-year">2026</span>
+  </div>
+</header>
+
+<div class="page-content">
+<div style="max-width: 780px; margin: 0 auto;">
+
+  <header class="page-header">
+    <p class="eyebrow">Based on Mind Over Mood · Greenberger & Padesky</p>
+    <h1>Cognitive Behavioral <em>Worksheets</em></h1>
+    <p class="subtitle">Five interactive tools drawn from the second edition — thought records, mood tracking, core belief work, and behavioral activation.</p>
+  </header>
+
+  <div class="client-email-bar">
+    <label for="client-email">Your email</label>
+    <input type="email" id="client-email" placeholder="Enter your email to receive a copy when you save…" />
+    <span class="email-hint">A PDF copy goes to you + Brock on every save</span>
   </div>
 
-  <!-- Nav -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/logo.jpg" alt="Brock Somatic Bodywork logo" class="brand-logo-img" />
-        <span>Brock <span>Somatic Bodywork</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#membership">Membership</a></li>
-        <li><a href="#sessions">Sessions</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#waitlist" class="nav-cta">Join Now</a></li>
-      </ul>
-    </div>
+  <nav class="nav-tabs" role="tablist">
+    <button class="nav-tab active" role="tab" onclick="switchTab(0)" id="tab-0">Thought Record</button>
+    <button class="nav-tab" role="tab" onclick="switchTab(1)" id="tab-1">Mood Log</button>
+    <button class="nav-tab" role="tab" onclick="switchTab(2)" id="tab-2">Hot Cross Bun</button>
+    <button class="nav-tab" role="tab" onclick="switchTab(3)" id="tab-3">Core Beliefs</button>
+    <button class="nav-tab" role="tab" onclick="switchTab(4)" id="tab-4">Activity Chart</button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <span class="hero-label">Level One Bodywork &nbsp;—&nbsp; Brock Somatic Bodywork</span>
-      <h1>Your body is holding more <em>than it needs to.</em></h1>
-      <p class="hero-sub">
-        Level One Bodywork is mainly local and distance personal coaching, with somatic education, guided regulation practices, and optional private Houston bodywork — 
-        designed to help you move out of chronic tension and back into yourself. No physical touch or bodywork is required.
-        Most women complete Level One in 3 to 6 months, depending on where their body is starting from.
-      </p>
-      <div class="hero-ctas">
-        <a href="#waitlist" class="btn btn-primary">Join Level One — $39/mo</a>
-        <a href="#membership" class="btn btn-outline">Explore What's Included</a>
+  <!-- WORKSHEET 1: 7-Column Thought Record -->
+  <section class="worksheet active" id="ws-0" aria-labelledby="tab-0">
+
+    <div class="ws-header">
+      <div class="ws-number">01</div>
+      <div class="ws-title-block">
+        <h2>7-Column Thought Record</h2>
+        <p class="ws-desc">The core CBT tool for examining automatic thoughts. Move through each column to identify the thought, evaluate evidence, and find a balanced perspective.</p>
       </div>
-      <div class="hero-pills">
-        <span class="pill">Nervous system regulation</span>
-        <span class="pill">Sleep &amp; recovery</span>
-        <span class="pill">Emotional resilience</span>
-        <span class="pill">Muscle tension relief</span>
-        <span class="pill">Body awareness</span>
-        <span class="pill">Calm &amp; presence</span>
-        <span class="pill" style="border-color:var(--gold);color:var(--brown);font-weight:600;">3–6 month journey</span>
+    </div>
+
+    <div class="intro-box">
+      <strong style="font-weight:500; color: var(--brown-mid);">How to use this:</strong> Work left to right. Start with the situation that triggered an emotional shift, then track what you felt, what your mind said, and the evidence for and against that thought. End by writing a more balanced alternative.
+    </div>
+
+    <div class="step-tracker">
+      <div class="step-item current" id="step-0">Situation</div>
+      <div class="step-item" id="step-1">Emotions</div>
+      <div class="step-item" id="step-2">Hot Thought</div>
+      <div class="step-item" id="step-3">Evidence</div>
+      <div class="step-item" id="step-4">Balanced</div>
+      <div class="step-item" id="step-5">Outcome</div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Situation</label>
+      <p class="field-sublabel">Who, what, when, where — just the observable facts</p>
+      <textarea id="tr-situation" placeholder="e.g., My manager walked past without saying hello at the start of the day."></textarea>
+    </div>
+
+    <div class="row-2">
+      <div class="field-group">
+        <label class="field-label">Emotions felt</label>
+        <p class="field-sublabel">Name each emotion and rate it 0–100</p>
+        <textarea class="sm" id="tr-emotions" placeholder="e.g., Anxious 75, Sad 40, Ashamed 60"></textarea>
       </div>
+      <div class="field-group">
+        <label class="field-label">Physical sensations</label>
+        <p class="field-sublabel">What did your body feel?</p>
+        <textarea class="sm" id="tr-body" placeholder="e.g., Chest tight, stomach dropped, face flushed"></textarea>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Automatic thought — the "hot" thought</label>
+      <p class="field-sublabel">The thought linked most strongly to the emotion. Rate belief 0–100%.</p>
+      <textarea class="sm" id="tr-hotthought" placeholder="e.g., "She's angry at me. I must have done something wrong." — Belief: 85%"></textarea>
+    </div>
+
+    <div class="evidence-cols">
+      <div class="evidence-col supports">
+        <div class="col-head">Evidence that supports it</div>
+        <ul class="evidence-list" id="ev-for-list">
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+        </ul>
+        <button class="add-btn" onclick="addEvidence('ev-for-list')">+ Add</button>
+      </div>
+      <div class="evidence-col against">
+        <div class="col-head">Evidence that doesn't support it</div>
+        <ul class="evidence-list" id="ev-against-list">
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+          <li><input type="text" placeholder="Add a piece of evidence…" /></li>
+        </ul>
+        <button class="add-btn" onclick="addEvidence('ev-against-list')">+ Add</button>
+      </div>
+    </div>
+
+    <div class="thought-arrow">
+      <div class="thought-box editable" contenteditable="true" data-ph="Original automatic thought…" id="ta-original-display"></div>
+      <span class="arrow-icon">→</span>
+      <div class="thought-box editable" contenteditable="true" data-ph="Write your balanced, alternative thought here… Rate new belief 0–100%." id="ta-balanced"></div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Outcome — re-rate emotions</label>
+      <p class="field-sublabel">Go back to the emotions you listed above and re-rate each one now (0–100)</p>
+      <textarea class="sm" id="tr-outcome" placeholder="e.g., Anxious 40 (was 75), Sad 20 (was 40) — What shifted?"></textarea>
+    </div>
+
+    <div class="reflection-card">
+      <div class="rc-label">Reflection prompt</div>
+      <p>"If a close friend described this situation and thought to me, what would I gently say to them?"</p>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-primary" onclick="markStep(0); emailWorksheet(0, true, true)">Save &amp; Send</button>
+      <button class="btn-secondary" onclick="markStep(0); emailWorksheet(0, true, false)">Save as PDF</button>
+      <button class="btn-secondary" onclick="clearWS('ws-0')">Clear form</button>
+      <span class="email-status" id="email-status-0"></span>
+      <span class="save-indicator" id="save-0">PDF opened</span>
     </div>
   </section>
 
-  <!-- Founder strip -->
-  <div class="founder-strip">
-    <div class="container">
-      <div class="founder-stat">
-        <span class="stat-label">Membership</span>
-        <span class="stat-val">$39/mo</span>
+  <!-- WORKSHEET 2: Daily Mood Log -->
+  <section class="worksheet" id="ws-1" aria-labelledby="tab-1">
+
+    <div class="ws-header">
+      <div class="ws-number">02</div>
+      <div class="ws-title-block">
+        <h2>Daily Mood Log</h2>
+        <p class="ws-desc">Track mood across seven emotions throughout the day. Noticing patterns across situations is the first step toward change.</p>
       </div>
-      <div class="founder-stat">
-        <span class="stat-label">Includes</span>
-        <span class="stat-val">5 Tools</span>
+    </div>
+
+    <div class="intro-box">
+      Rate each emotion 0–10 right now, or at the end of each day. Add notes on what influenced the score — situations, thoughts, or behaviors that stood out.
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Date & context</label>
+      <input type="text" id="mood-date" placeholder="e.g., Tuesday — work from home, poor sleep" />
+    </div>
+
+    <div class="mood-tracker" id="mood-tracker">
+      <!-- Generated by JS -->
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="row-2">
+      <div class="field-group">
+        <label class="field-label">What helped today?</label>
+        <textarea class="sm" id="mood-helped" placeholder="People, activities, moments of ease…"></textarea>
       </div>
-      <div class="founder-stat">
-        <span class="stat-label">Timeline</span>
-        <span class="stat-val">3–6 mo</span>
+      <div class="field-group">
+        <label class="field-label">What made it harder?</label>
+        <textarea class="sm" id="mood-harder" placeholder="Situations, thoughts, avoided tasks…"></textarea>
       </div>
-      <div class="founder-stat">
-        <span class="stat-label">Houston</span>
-        <span class="stat-val">Bodywork</span>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Notable automatic thoughts today</label>
+      <textarea id="mood-thoughts" placeholder="Any thoughts that showed up repeatedly or felt especially believable…"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">One thing to carry into tomorrow</label>
+      <textarea class="sm" id="mood-tomorrow" placeholder="A small intention, something to notice, or an action to try…"></textarea>
+    </div>
+
+    <div class="reflection-card">
+      <div class="rc-label">Reflection prompt</div>
+      <p>"On days when my mood shifted for the better, even briefly — what was happening in those moments?"</p>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-primary" onclick="markStep(1); emailWorksheet(1, true, true)">Save &amp; Send</button>
+      <button class="btn-secondary" onclick="markStep(1); emailWorksheet(1, true, false)">Save as PDF</button>
+      <button class="btn-secondary" onclick="clearWS('ws-1')">Clear</button>
+      <span class="email-status" id="email-status-1"></span>
+      <span class="save-indicator" id="save-1">PDF opened</span>
+    </div>
+  </section>
+
+  <!-- WORKSHEET 3: Hot Cross Bun (5-Areas) -->
+  <section class="worksheet" id="ws-2" aria-labelledby="tab-2">
+
+    <div class="ws-header">
+      <div class="ws-number">03</div>
+      <div class="ws-title-block">
+        <h2>Hot Cross Bun Model</h2>
+        <p class="ws-desc">Maps the five-part connection between situation, thoughts, emotions, physical sensations, and behaviors — showing how each area influences the others.</p>
       </div>
-      <div class="founder-stat">
-        <span class="stat-label">Cancel</span>
-        <span class="stat-val">Anytime</span>
+    </div>
+
+    <div class="intro-box">
+      Start with a situation where you noticed a strong emotional reaction. Fill in each quadrant. Then look for the arrows — where is the feedback loop running? Which area, if shifted, would create the most relief?
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Situation / Trigger</label>
+      <input type="text" id="hcb-situation" placeholder="The specific moment or context…" />
+    </div>
+
+    <div class="hot-cross-box">
+      <div class="hcb-cell">
+        <div class="hcb-head">🧠 Thoughts</div>
+        <textarea class="sm" id="hcb-thoughts" placeholder="What went through your mind? What did it mean to you?"></textarea>
       </div>
+      <div class="hcb-cell">
+        <div class="hcb-head">💛 Emotions</div>
+        <textarea class="sm" id="hcb-emotions" placeholder="Name the feelings and rate them 0–100…"></textarea>
+      </div>
+      <div class="hcb-cell">
+        <div class="hcb-head">🫀 Physical sensations</div>
+        <textarea class="sm" id="hcb-physical" placeholder="Where did you feel it in the body?"></textarea>
+      </div>
+      <div class="hcb-cell">
+        <div class="hcb-head">🏃 Behaviors</div>
+        <textarea class="sm" id="hcb-behaviors" placeholder="What did you do — or avoid doing?"></textarea>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field-group">
+      <label class="field-label">The connection I notice most clearly</label>
+      <p class="field-sublabel">e.g., When I have the thought "I'll fail," my body tenses, which makes me avoid — which then confirms the thought</p>
+      <textarea id="hcb-connection" placeholder="Describe the loop you can see running between the five areas…"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Where is the easiest entry point to interrupt the loop?</label>
+      <div class="distortion-chips" id="entry-chips">
+        <span class="chip" onclick="toggleChip(this)">Change the thought</span>
+        <span class="chip" onclick="toggleChip(this)">Move the body</span>
+        <span class="chip" onclick="toggleChip(this)">Name the emotion</span>
+        <span class="chip" onclick="toggleChip(this)">Slow the breath</span>
+        <span class="chip" onclick="toggleChip(this)">Do the avoided thing</span>
+        <span class="chip" onclick="toggleChip(this)">Reach out to someone</span>
+        <span class="chip" onclick="toggleChip(this)">Reduce stimulation</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">One small experiment to try this week</label>
+      <textarea class="sm" id="hcb-experiment" placeholder="A concrete behavior, thought reframe, or body-based practice to test…"></textarea>
+    </div>
+
+    <div class="reflection-card">
+      <div class="rc-label">Reflection prompt</div>
+      <p>"Which part of the cycle do I have the most power over right now? What would it mean to intervene there, even imperfectly?"</p>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-primary" onclick="markStep(2); emailWorksheet(2, true, true)">Save &amp; Send</button>
+      <button class="btn-secondary" onclick="markStep(2); emailWorksheet(2, true, false)">Save as PDF</button>
+      <button class="btn-secondary" onclick="clearWS('ws-2')">Clear</button>
+      <span class="email-status" id="email-status-2"></span>
+      <span class="save-indicator" id="save-2">PDF opened</span>
+    </div>
+  </section>
+
+  <!-- WORKSHEET 4: Core Belief Work -->
+  <section class="worksheet" id="ws-3" aria-labelledby="tab-3">
+
+    <div class="ws-header">
+      <div class="ws-number">04</div>
+      <div class="ws-title-block">
+        <h2>Core Belief Work</h2>
+        <p class="ws-desc">Core beliefs are the deep, unconditional assumptions we hold about ourselves, others, and the world. This worksheet helps identify, test, and gradually reshape them.</p>
+      </div>
+    </div>
+
+    <div class="intro-box">
+      Core beliefs often surface during automatic thought work as underlying rules: "Because I made this mistake, it means I am…" Use the downward arrow technique — keep asking "what does this mean about me?" until you reach the root assumption.
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">The core belief I'm exploring</label>
+      <p class="field-sublabel">State it in the first person, as absolutely as it feels when it's active</p>
+      <input type="text" id="cb-belief" placeholder='e.g., "I am fundamentally unlovable." / "I am incompetent." / "The world is dangerous."' />
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">How strongly do I believe this right now?</label>
+      <div class="belief-bar-wrapper">
+        <div class="belief-bar-label">
+          <span>Current belief rating</span>
+          <span class="belief-val" id="cb-val">50%</span>
+        </div>
+        <input type="range" min="0" max="100" value="50" step="1" id="cb-slider" oninput="updateBelief(this, 'cb-val')" />
+        <div class="scale-labels"><span>0% — don't believe at all</span><span>100% — believe completely</span></div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Where did this belief come from?</label>
+      <p class="field-sublabel">Early experiences, messages from caregivers, repeated situations…</p>
+      <textarea id="cb-origin" placeholder="Reflect on when this idea first made sense as a way to understand yourself or the world…"></textarea>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field-group">
+      <label class="field-label">How might this belief be partially true — but overgeneralized?</label>
+      <textarea id="cb-partial" placeholder='e.g., "I did struggle in that relationship — but that doesn't mean all my relationships are doomed."'></textarea>
+    </div>
+
+    <div class="evidence-cols">
+      <div class="evidence-col supports">
+        <div class="col-head">Experiences that seem to confirm it</div>
+        <ul class="evidence-list" id="cb-for-list">
+          <li><input type="text" placeholder="Example from your life…" /></li>
+          <li><input type="text" placeholder="Example from your life…" /></li>
+        </ul>
+        <button class="add-btn" onclick="addEvidence('cb-for-list')">+ Add</button>
+      </div>
+      <div class="evidence-col against">
+        <div class="col-head">Experiences that challenge it</div>
+        <ul class="evidence-list" id="cb-against-list">
+          <li><input type="text" placeholder="Even small exceptions count…" /></li>
+          <li><input type="text" placeholder="Even small exceptions count…" /></li>
+        </ul>
+        <button class="add-btn" onclick="addEvidence('cb-against-list')">+ Add</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">A more balanced, compassionate belief to move toward</label>
+      <p class="field-sublabel">Not a forced positive — something more nuanced that accounts for both columns above</p>
+      <textarea id="cb-new" placeholder='e.g., "I have struggled in some relationships and also experienced real connection. My worth isn't determined by any single outcome."'></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">How strongly do I believe the new belief right now?</label>
+      <div class="belief-bar-wrapper">
+        <div class="belief-bar-label">
+          <span>New belief rating</span>
+          <span class="belief-val" id="cb-new-val">20%</span>
+        </div>
+        <input type="range" min="0" max="100" value="20" step="1" id="cb-new-slider" oninput="updateBelief(this, 'cb-new-val')" />
+        <div class="scale-labels"><span>0%</span><span>100%</span></div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">One action this week that would be consistent with the new belief</label>
+      <textarea class="sm" id="cb-action" placeholder="A behavior, a conversation, a risk to take — something a person who held the new belief might do…"></textarea>
+    </div>
+
+    <div class="reflection-card">
+      <div class="rc-label">Reflection prompt</div>
+      <p>"What would it cost me to hold this belief a little more loosely? What might become possible if I did?"</p>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-primary" onclick="markStep(3); emailWorksheet(3, true, true)">Save &amp; Send</button>
+      <button class="btn-secondary" onclick="markStep(3); emailWorksheet(3, true, false)">Save as PDF</button>
+      <button class="btn-secondary" onclick="clearWS('ws-3')">Clear</button>
+      <span class="email-status" id="email-status-3"></span>
+      <span class="save-indicator" id="save-3">PDF opened</span>
+    </div>
+  </section>
+
+  <!-- WORKSHEET 5: Behavioral Activation -->
+  <section class="worksheet" id="ws-4" aria-labelledby="tab-4">
+
+    <div class="ws-header">
+      <div class="ws-number">05</div>
+      <div class="ws-title-block">
+        <h2>Behavioral Activation Planner</h2>
+        <p class="ws-desc">Depression and anxiety narrow our world. This planner schedules activities that restore a sense of mastery, pleasure, or connection — even in small doses.</p>
+      </div>
+    </div>
+
+    <div class="intro-box">
+      Identify activities across three categories: <strong style="font-weight:500;">mastery</strong> (things that give a sense of accomplishment), <strong style="font-weight:500;">pleasure</strong> (things you enjoy or used to enjoy), and <strong style="font-weight:500;">connection</strong> (contact with other people). Rate predicted vs. actual mood to test your predictions.
+    </div>
+
+    <div class="row-3">
+      <div class="field-group">
+        <label class="field-label">Mastery activities</label>
+        <p class="field-sublabel">Tasks, chores, responsibilities</p>
+        <textarea id="ba-mastery" placeholder="e.g., Make one phone call, tidy one surface, finish a task…"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Pleasure activities</label>
+        <p class="field-sublabel">Things you enjoy or enjoyed</p>
+        <textarea id="ba-pleasure" placeholder="e.g., Short walk, music, cooking something, reading…"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Connection activities</label>
+        <p class="field-sublabel">Contact, community, presence</p>
+        <textarea id="ba-connect" placeholder="e.g., Text a friend, sit in a café, attend a class…"></textarea>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="field-label" style="margin-bottom:1rem;">Weekly schedule — predicted vs. actual mood</p>
+
+    <table class="ws5-table" id="ba-table">
+      <thead>
+        <tr>
+          <th style="width:14%">Day</th>
+          <th style="width:30%">Planned activity</th>
+          <th style="width:12%">Predicted mood (0–10)</th>
+          <th style="width:12%">Actual mood (0–10)</th>
+          <th style="width:32%">What I noticed</th>
+        </tr>
+      </thead>
+      <tbody id="ba-tbody">
+      </tbody>
+    </table>
+
+    <div class="field-group">
+      <label class="field-label">Patterns I notice comparing predicted vs. actual</label>
+      <textarea id="ba-patterns" placeholder="Was the predicted mood consistently lower than actual? Which types of activities helped most?"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">One behavior I've been avoiding that I'll schedule this week</label>
+      <textarea class="sm" id="ba-avoidance" placeholder="Describe it — and what you predict will happen vs. what might actually happen…"></textarea>
+    </div>
+
+    <div class="reflection-card">
+      <div class="rc-label">Reflection prompt</div>
+      <p>"Waiting to feel motivated before acting often keeps us stuck. What if action came first, and motivation followed — even slightly?"</p>
+    </div>
+
+    <div class="completion-banner" id="all-done-banner">
+      <strong>You've completed all five worksheets.</strong>
+      All five CBT tools are filled in. Consider reviewing your thought records over time to notice how your thinking patterns shift — and save or print this page to revisit.
+    </div>
+
+    <div class="action-row">
+      <button class="btn-primary" onclick="markStep(4); emailWorksheet(4, true, true)">Save &amp; Send</button>
+      <button class="btn-secondary" onclick="markStep(4); emailWorksheet(4, true, false)">Save as PDF</button>
+      <button class="btn-secondary" onclick="clearWS('ws-4')">Clear</button>
+      <button class="btn-secondary" onclick="window.print()">Print / Save PDF</button>
+      <span class="email-status" id="email-status-4"></span>
+      <span class="save-indicator" id="save-4">PDF opened</span>
+    </div>
+  </section>
+
+</div>
+
+</div><!-- /page-content inner -->
+
+<script>
+const DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const MOODS = [
+  { name: 'Sadness', id: 'sad' },
+  { name: 'Anxiety', id: 'anx' },
+  { name: 'Anger', id: 'ang' },
+  { name: 'Shame', id: 'sha' },
+  { name: 'Guilt', id: 'gui' },
+  { name: 'Hopelessness', id: 'hop' },
+  { name: 'Joy', id: 'joy' },
+];
+
+function buildMoodTracker() {
+  const t = document.getElementById('mood-tracker');
+  t.innerHTML = MOODS.map(m => `
+    <div class="mood-item">
+      <label>${m.name}</label>
+      <div class="slider-row">
+        <input type="range" min="0" max="10" value="5" step="1" id="mood-${m.id}"
+          oninput="updateMoodSlider(this,'mood-val-${m.id}')" style="--pct:50%"/>
+        <span class="mood-val" id="mood-val-${m.id}">5</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateMoodSlider(el, valId) {
+  document.getElementById(valId).textContent = el.value;
+  el.style.setProperty('--pct', (el.value / 10 * 100) + '%');
+}
+
+function buildBATable() {
+  const tbody = document.getElementById('ba-tbody');
+  tbody.innerHTML = DAYS.map(d => `
+    <tr>
+      <td style="font-weight:400; color:var(--text-muted); font-size:12.5px;">${d}</td>
+      <td><input type="text" placeholder="Activity…" /></td>
+      <td><input type="text" placeholder="0–10" style="width:60px" /></td>
+      <td><input type="text" placeholder="0–10" style="width:60px" /></td>
+      <td><input type="text" placeholder="Notes…" /></td>
+    </tr>
+  `).join('');
+}
+
+function updateBelief(el, valId) {
+  document.getElementById(valId).textContent = el.value + '%';
+  el.style.setProperty('--pct', el.value + '%');
+}
+
+function switchTab(idx) {
+  document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', i === idx));
+  document.querySelectorAll('.worksheet').forEach((w,i) => w.classList.toggle('active', i === idx));
+}
+
+function addEvidence(listId) {
+  const list = document.getElementById(listId);
+  const li = document.createElement('li');
+  li.innerHTML = '<input type="text" placeholder="Add a piece of evidence…" />';
+  list.appendChild(li);
+  li.querySelector('input').focus();
+}
+
+function toggleChip(el) {
+  el.classList.toggle('selected');
+}
+
+let completedSteps = new Set();
+
+function markStep(idx) {
+  completedSteps.add(idx);
+  const ind = document.getElementById('save-' + idx);
+  ind.classList.add('show');
+  setTimeout(() => ind.classList.remove('show'), 2500);
+  if (completedSteps.size === 5) {
+    document.getElementById('all-done-banner').classList.add('visible');
+  }
+}
+
+function clearWS(id) {
+  const ws = document.getElementById(id);
+  ws.querySelectorAll('textarea').forEach(t => t.value = '');
+  ws.querySelectorAll('input[type="text"]').forEach(i => i.value = '');
+  ws.querySelectorAll('input[type="range"]').forEach(r => {
+    r.value = r.id === 'cb-new-slider' ? 20 : 50;
+    r.dispatchEvent(new Event('input'));
+  });
+  ws.querySelectorAll('.chip.selected').forEach(c => c.classList.remove('selected'));
+  ws.querySelectorAll('[contenteditable]').forEach(c => c.textContent = '');
+  if (id === 'ws-1') buildMoodTracker();
+}
+
+buildMoodTracker();
+buildBATable();
+
+const WS_NAMES = [
+  '7-Column Thought Record',
+  'Daily Mood Log',
+  'Hot Cross Bun Model',
+  'Core Belief Work',
+  'Behavioral Activation Planner'
+];
+
+function collectWorksheetData(wsIdx) {
+  const ws = document.getElementById('ws-' + wsIdx);
+  const data = {};
+  ws.querySelectorAll('textarea, input[type="text"]').forEach(el => {
+    const label = el.closest('.field-group')?.querySelector('.field-label')?.textContent?.trim()
+      || el.closest('.hcb-cell')?.querySelector('.hcb-head')?.textContent?.trim()
+      || el.closest('.evidence-col')?.querySelector('.col-head')?.textContent?.trim()
+      || el.closest('td')?.previousElementSibling?.textContent?.trim()
+      || el.placeholder?.slice(0, 40)
+      || el.id || 'field';
+    if (el.value?.trim()) {
+      data[label] = (data[label] ? data[label] + '\n' : '') + el.value.trim();
+    }
+  });
+  ws.querySelectorAll('input[type="range"]').forEach(el => {
+    const wrapper = el.closest('.belief-bar-wrapper, .mood-item');
+    const label = wrapper?.querySelector('label, .belief-bar-label span')?.textContent?.trim() || el.id;
+    data[label] = el.value + (el.id.includes('cb') ? '%' : '/10');
+  });
+  ws.querySelectorAll('.chip.selected').forEach(el => {
+    data['Selected approach'] = (data['Selected approach'] ? data['Selected approach'] + ', ' : '') + el.textContent.trim();
+  });
+  ws.querySelectorAll('[contenteditable]').forEach(el => {
+    if (el.textContent?.trim()) {
+      const ph = el.dataset.ph || 'Thought';
+      data[ph.slice(0, 40)] = el.textContent.trim();
+    }
+  });
+  return data;
+}
+
+function buildPDF(wsIdx) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const pw = doc.internal.pageSize.getWidth();
+  const ph = doc.internal.pageSize.getHeight();
+  const margin = 48;
+  const contentW = pw - margin * 2;
+  let y = margin;
+
+  const CREAM = [245, 238, 216];
+  const BROWN = [46, 31, 14];
+  const GOLD  = [201, 169, 110];
+  const AMBER = [107, 76, 42];
+  const MUTED = [122, 96, 72];
+
+  doc.setFillColor(...CREAM);
+  doc.rect(0, 0, pw, ph, 'F');
+
+  doc.setDrawColor(...GOLD);
+  doc.setLineWidth(0.5);
+  doc.rect(margin - 12, margin - 12, contentW + 24, ph - margin * 2 + 24);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(...GOLD);
+  doc.text('MIND OVER MOOD · CBT WORKSHEETS', margin, y);
+  y += 6;
+  doc.setDrawColor(...GOLD);
+  doc.setLineWidth(0.8);
+  doc.line(margin, y, pw - margin, y);
+  y += 20;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(20);
+  doc.setTextColor(...BROWN);
+  doc.text(WS_NAMES[wsIdx], margin, y);
+  y += 8;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(...MUTED);
+  doc.text('Submitted ' + new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' }), margin, y);
+  y += 20;
+
+  doc.setDrawColor(...GOLD);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y, pw - margin, y);
+  y += 18;
+
+  const data = collectWorksheetData(wsIdx);
+  const entries = Object.entries(data);
+
+  if (entries.length === 0) {
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(11);
+    doc.setTextColor(...MUTED);
+    doc.text('No responses entered for this worksheet.', margin, y);
+  }
+
+  entries.forEach(([label, value]) => {
+    if (y > ph - margin - 60) {
+      doc.addPage();
+      doc.setFillColor(...CREAM);
+      doc.rect(0, 0, pw, ph, 'F');
+      y = margin;
+    }
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...AMBER);
+    doc.text(label.toUpperCase(), margin, y);
+    y += 12;
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(...BROWN);
+    const lines = doc.splitTextToSize(value, contentW);
+    lines.forEach(line => {
+      if (y > ph - margin - 30) {
+        doc.addPage();
+        doc.setFillColor(...CREAM);
+        doc.rect(0, 0, pw, ph, 'F');
+        y = margin;
+      }
+      doc.text(line, margin, y);
+      y += 15;
+    });
+    y += 10;
+
+    doc.setDrawColor(...GOLD);
+    doc.setLineWidth(0.2);
+    doc.line(margin, y - 4, pw - margin, y - 4);
+    y += 4;
+  });
+
+  const totalPages = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= totalPages; i++) {
+    doc.setPage(i);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...MUTED);
+    doc.text('brockjohn.com · Mind Over Mood Worksheets', margin, ph - 24);
+    doc.text('Page ' + i + ' of ' + totalPages, pw - margin, ph - 24, { align: 'right' });
+  }
+
+  return doc.output('datauristring').split(',')[1];
+}
+
+async function emailWorksheet(wsIdx, fromSave = false, sendToBrock = true) {
+  const statusEl = document.getElementById('email-status-' + wsIdx);
+
+  const clientEmail = document.getElementById('client-email').value.trim();
+
+  const data = collectWorksheetData(wsIdx);
+
+  // Save only — build PDF and open in a new browser tab
+  if (!sendToBrock) {
+    const data = collectWorksheetData(wsIdx);
+    if (Object.keys(data).length === 0) {
+      const ind = document.getElementById('save-' + wsIdx);
+      if (ind) {
+        ind.textContent = 'Fill in something first';
+        ind.classList.add('show');
+        setTimeout(() => { ind.classList.remove('show'); ind.textContent = 'Saved'; }, 2500);
+      }
+      return;
+    }
+    try {
+      const base64 = buildPDF(wsIdx);
+      const bytes = atob(base64);
+      const arr = new Uint8Array(bytes.length);
+      for (let i = 0; i < bytes.length; i++) arr[i] = bytes.charCodeAt(i);
+      const blob = new Blob([arr], { type: 'application/pdf' });
+      const blobUrl = URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+      const ind = document.getElementById('save-' + wsIdx);
+      if (ind) { ind.classList.add('show'); setTimeout(() => ind.classList.remove('show'), 2500); }
+    } catch(e) {
+      console.error('PDF open error:', e);
+    }
+    return;
+  }
+
+  if (Object.keys(data).length === 0) {
+    statusEl.className = 'email-status error';
+    statusEl.textContent = 'Fill in at least one field first';
+    statusEl.style.display = 'inline-flex';
+    setTimeout(() => { statusEl.style.display = 'none'; }, 3000);
+    return;
+  }
+
+  statusEl.className = 'email-status sending';
+  statusEl.innerHTML = '<span class="spin">⟳</span> Generating PDF…';
+  statusEl.style.display = 'inline-flex';
+
+  let pdfBase64;
+  try {
+    pdfBase64 = buildPDF(wsIdx);
+  } catch(e) {
+      statusEl.className = 'email-status error';
+    statusEl.textContent = 'PDF error — try again';
+    statusEl.style.display = 'inline-flex';
+    setTimeout(() => { statusEl.style.display = 'none'; }, 4000);
+    return;
+  }
+
+  statusEl.innerHTML = '<span class="spin">⟳</span> Sending…';
+
+  try {
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        worksheetName: WS_NAMES[wsIdx],
+        worksheetIndex: wsIdx,
+        pdfBase64,
+        clientEmail: clientEmail || null,
+        date: new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' })
+      })
+    });
+
+    if (res.ok) {
+          statusEl.className = 'email-status sent';
+      statusEl.textContent = clientEmail ? '✓ Sent to you & Brock' : '✓ Sent to Brock';
+      setTimeout(() => { statusEl.style.display = 'none'; }, 4000);
+    } else {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || res.statusText);
+    }
+  } catch(e) {
+      statusEl.className = 'email-status error';
+    statusEl.textContent = 'Send failed — check API key';
+    statusEl.style.display = 'inline-flex';
+    setTimeout(() => { statusEl.style.display = 'none'; }, 5000);
+  }
+}
+
+
+const cbSlider = document.getElementById('cb-slider');
+if (cbSlider) {
+  cbSlider.style.setProperty('--pct', '50%');
+}
+const cbNewSlider = document.getElementById('cb-new-slider');
+if (cbNewSlider) {
+  cbNewSlider.style.setProperty('--pct', '20%');
+}
+</script>
+</div><!-- /page-content -->
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand-block">
+      <p class="footer-name"><em>Brock John</em></p>
+    </div>
+    <div class="footer-right">
+      <p class="footer-copy">
+        &copy; 2026 Brock John<br>
+        Houston, TX<br>
+        Somatic Sex Education
+      </p>
+      <p class="footer-ornament">bj</p>
     </div>
   </div>
-
-  <!-- ABOUT BROCK -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div class="about-photo-wrap">
-          <!-- Place brock-photo.jpg in your /public folder to display here -->
-          <img
-            src="/brock-photo.jpg"
-            alt="Brock John — Somatic Bodywork Practitioner"
-            class="about-photo"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="about-photo-placeholder" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            <span>brock-photo.jpg</span>
-          </div>
-        </div>
-        <div class="about-text">
-          <span class="eyebrow">About Brock</span>
-          <h2>Nervous system educator &amp; somatic bodywork practitioner.</h2>
-          <p>
-            Brock John is a somatic bodywork practitioner and nervous system educator based in 
-            Houston, TX. His practice draws from therapeutic touch, somatic awareness training, 
-            and polyvagal-informed education.
-          </p>
-          <p>
-            Brock works with high-stress professionals, caregivers, and people navigating chronic 
-            tension — helping them rebuild a felt sense of safety and ease in the body. His approach 
-            is calm, grounded, and rooted in the idea that the body already knows how to heal when 
-            given the right conditions.
-          </p>
-          <p>
-            Through somatic awareness education and therapeutic touch, clients restore nervous system 
-            balance and recover from the chronic stress that accumulates over years of high-demand living.
-          </p>
-          <ul class="about-creds">
-            <li>Polyvagal-Informed Practice</li>
-            <li>Thai Massage &amp; Therapeutic Bodywork</li>
-            <li>Nervous System Regulation Coaching</li>
-            <li>Mind-Body &amp; Somatic Coaching</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="why">
-    <div class="container">
-      <span class="eyebrow">Why this exists</span>
-      <h2>Your body is not broken.</h2>
-      <div class="why-body">
-        <p>
-          Long hours, emotional load, caregiving roles, and constant responsibility can keep the nervous 
-          system in an extended stress response. Over time, the body may stay activated long after the day is over.
-        </p>
-        <p style="margin-top:0.75rem;">
-          This shows up as chronic tension, poor sleep, difficulty relaxing, emotional exhaustion, and 
-          a sense of disconnection from your own body. That is biology — not weakness.
-        </p>
-      </div>
-      <div class="outcome-grid">
-        <div class="outcome-item">Sleep &amp; recovery</div>
-        <div class="outcome-item">Emotional resilience</div>
-        <div class="outcome-item">Calm &amp; presence</div>
-        <div class="outcome-item">Muscle tension relief</div>
-        <div class="outcome-item">Body awareness</div>
-        <div class="outcome-item">Decompression</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="problem">
-    <div class="container">
-      <span class="eyebrow">The problem</span>
-      <div class="problem-card">
-        <span class="card-label">Why people feel stuck</span>
-        <h3>Many people end up feeling wired, tense, and disconnected — unable to truly relax.</h3>
-        <p>
-          Disconnection is often the nervous system adapting to overload. It is not a character flaw. 
-          It is a patterned response that, with steady and gentle support, can be retrained.
-        </p>
-      </div>
-      <div class="problem-card">
-        <span class="card-label">Key reframe</span>
-        <h3>The goal is not force. The goal is gentle retraining.</h3>
-        <p>
-          Repeated experiences of awareness, safety, and regulation help the body relearn calm over time. 
-          This is what Level One Bodywork is built around.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO -->
-  <section class="who">
-    <div class="container">
-      <span class="eyebrow">Who this is for</span>
-      <h2>Designed for people carrying high levels of stress</h2>
-      <ul class="who-list">
-        <li>Nurses and healthcare professionals</li>
-        <li>Caregivers and helpers</li>
-        <li>Teachers and service professionals</li>
-        <li>Anyone who feels wired, tense, numb, or exhausted</li>
-        <li>People curious about somatic bodywork and nervous system education</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section class="method">
-    <div class="container">
-      <span class="eyebrow">The method</span>
-      <h2>A calm, grounded approach to somatic reconnection</h2>
-      <div class="method-grid">
-        <div class="method-card">
-          <h4>Nervous System Education</h4>
-          <p>Understand why stress keeps the body in survival mode and why relaxation can feel difficult after prolonged overload.</p>
-        </div>
-        <div class="method-card">
-          <h4>Guided Regulation Practices</h4>
-          <p>Short, supportive exercises that help the body experience safety, downshift from chronic alertness, and rebuild calm.</p>
-        </div>
-        <div class="method-card">
-          <h4>Somatic Awareness</h4>
-          <p>Learn to notice breathing, muscle tension, and sensation — the early cues your body has been sending all along.</p>
-        </div>
-      </div>
-      <div style="margin-top:2rem;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--cream-mid);border-radius:2px;">
-        <p style="font-size:0.88rem;color:var(--amber-light);line-height:1.65;">
-          <strong style="color:var(--brown);">Level One is a journey, not a program with a fixed end date.</strong> 
-          Training varies per woman — most members move through Level One in 3 to 6 months. 
-          Some arrive with more chronic tension and need more time. Some shift quickly. 
-          The pace is set by your body, not a calendar.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP -->
-  <section class="membership" id="membership">
-    <div class="container">
-      <span class="eyebrow">Membership</span>
-      <h2>Level One Bodywork Membership</h2>
-      <p>
-        A private somatic support membership built around five practical tools — 
-        steady, body-first support you can use every week. Level One training varies per woman 
-        but typically ranges between 3 and 6 months, paced entirely by your body's own signals.
-        The core experience is local and distance personal coaching support, and no physical touch or bodywork is required to benefit from the membership.
-      </p>
-
-      <div class="price-row" style="margin-top:1.75rem;">
-        <span class="price-num">$39</span>
-        <span class="price-per">/month</span>
-      </div>
-      <p class="price-note">Cancel any time &nbsp;·&nbsp; Houston members receive bodywork access</p>
-
-      <ul class="benefit-list">
-        <li class="benefit-item">
-          <h4>Brock Check-In App</h4>
-          <p>A guided daily tool to track your nervous system state between sessions. 
-          Log patterns, note shifts, and build awareness of what your body is communicating — 
-          in three to five minutes per day.</p>
-        </li>
-        <li class="benefit-item">
-          <h4>Brock Book Guide (BBG)</h4>
-          <p>Use any book you're currently reading as a coaching anchor. You'll receive a 
-          structured reflection guide for that title, then join a 30-minute 1:1 call with Brock 
-          to work through your insights. Learning that lands in the body, not just the mind.</p>
-        </li>
-        <li class="benefit-item">
-          <h4>1-on-1 Somatic Exercise Calls</h4>
-          <p>Monthly private video calls where Brock guides you through targeted somatic exercises — 
-          breath, movement, and body-based regulation practices tailored to what your system needs. 
-          Sessions are recorded for your review.</p>
-        </li>
-        <li class="benefit-item">
-          <h4>Nervous System Reset Worksheets</h4>
-          <p>Print-or-fill worksheets built on somatic and polyvagal frameworks. Topics include 
-          breath mapping, body scanning, stress response identification, and window-of-tolerance 
-          tracking. New worksheets added monthly.</p>
-        </li>
-        <li class="benefit-item">
-          <h4>Access to Bodywork Sessions <span style="font-family:var(--ff-body);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:var(--cream);border:1px solid var(--gold-light);padding:0.15rem 0.55rem;border-radius:2px;vertical-align:middle;margin-left:0.4rem;">Available at 30 days</span></h4>
-          <p>Houston-based members unlock private in-person bodywork sessions after 30 days of membership. The waiting period is intentional — it gives Brock time to learn the signals and patterns of your body through the Check-In App and 1:1 calls, so every session is customized to exactly what your nervous system needs.</p>
-          <p style="margin-top:0.5rem;">Sessions focus on calming and parasympathetic restoration — stretching, breathwork, full-body relaxation massage, and polarity therapy. The goal is to calm the body, not excite it.</p>
-        </li>
-      </ul>
-
-      <div style="margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--cream-mid);">
-        <span class="eyebrow" style="margin-bottom:0.9rem;">Explore the tools</span>
-        <div class="tool-buttons">
-          <a href="#waitlist" class="btn-tool">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="2" width="14" height="20" rx="2"/>
-              <line x1="9" y1="8" x2="15" y2="8"/>
-              <line x1="9" y1="12" x2="15" y2="12"/>
-              <line x1="9" y1="16" x2="13" y2="16"/>
-            </svg>
-            Brock Check-In App
-          </a>
-          <a href="#waitlist" class="btn-tool">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-            Brock Book Guide
-          </a>
-          <a href="#waitlist" class="btn-tool">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="8" y1="13" x2="16" y2="13"/>
-              <line x1="8" y1="17" x2="12" y2="17"/>
-            </svg>
-            NS Reset Worksheets
-          </a>
-        </div>
-      </div>
-
-      <div style="margin-top:2rem;">
-        <a href="#waitlist" class="btn btn-primary">Join Level One — $39/mo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE RESOURCE -->
-  <section class="free-resource">
-    <div class="container">
-      <span class="eyebrow">Free resource</span>
-      <h2>The Somatic Reset Guide</h2>
-      <p>
-        A short educational guide explaining why chronic stress leaves the body feeling wired, 
-        tense, and disconnected — and how somatic awareness begins rebuilding connection.
-      </p>
-      <div class="resource-box">
-        <ul>
-          <li>Why chronic stress keeps the body in survival mode</li>
-          <li>How stress disconnects sensation and body awareness</li>
-          <li>Why relaxation alone often does not work</li>
-          <li>A simple practice to begin reconnecting with your body</li>
-        </ul>
-        <a href="https://brockjohn.com/free-somatic-guide" class="btn btn-outline">Read the Free Somatic Reset Guide</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRACTICE -->
-  <section class="practice">
-    <div class="container">
-      <span class="eyebrow">Try this 60-second practice</span>
-      <h2>Body Awareness Reset</h2>
-      <ol class="steps">
-        <li>Sit comfortably and close your eyes.</li>
-        <li>Take three slow breaths, letting each exhale be longer than the inhale.</li>
-        <li>Notice where your body feels tight, heavy, or held.</li>
-        <li>Observe the sensation without trying to change it.</li>
-      </ol>
-      <p class="practice-note">
-        The goal is awareness, not fixing. Regulation is a skill the body can learn again.
-      </p>
-    </div>
-  </section>
-
-  <!-- APP -->
-  <section class="app-section">
-    <div class="container">
-      <div class="app-inner">
-        <div class="app-text">
-          <span class="app-label">Brock Somatic Check-In App</span>
-          <h2>A daily bridge between stress and support</h2>
-          <p>
-            The Check-In App gives members a practical daily layer before and between deeper 
-            sessions. Five gentle questions — simple 1–10 sliders — help you track your nervous 
-            system patterns, receive a grounded supportive response, and follow one brief somatic practice.
-          </p>
-          <p style="margin-top:0.75rem;">
-            Brock reviews your check-ins before each call so sessions start exactly where you are.
-          </p>
-        </div>
-        <div class="app-img">
-          <!-- Place check-in-app.png in your /public folder -->
-          <img
-            src="/check-in-app.png"
-            alt="Brock Somatic Check-In App — nervous system load tracker"
-            onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div style=\'padding:2rem;background:linear-gradient(135deg,#1a2e2e,#0f1f1f);border-radius:8px;color:#5f9ea0;font-family:monospace;font-size:0.8rem;min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:0.75rem;\'><div style=\'font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#4a8a8a;\'>Brock Somatic Check-In App</div><div style=\'font-size:1.1rem;font-weight:600;color:#e0f0f0;\'>Notice what your body is signaling.</div><div style=\'background:rgba(255,255,255,0.06);padding:0.75rem;border-radius:6px;\'><div style=\'font-size:0.65rem;color:#4a8a8a;margin-bottom:0.25rem;\'>Average nervous system load</div><div style=\'font-size:1rem;color:#e0f0f0;font-weight:600;\'>Lower load &nbsp; <span style=\'background:#2a6a6a;color:#e0f0f0;padding:0.2rem 0.5rem;border-radius:50%;font-size:0.8rem;\'>5</span></div></div><div style=\'font-size:0.75rem;color:#4a8a8a;\'>Add check-in-app.png to /public folder</div></div>';"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <span class="eyebrow">Testimonials</span>
-      <h2>What members say</h2>
-      <p>Calm, structured, body-aware support designed to feel practical in real life.</p>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <blockquote>
-            "This gave me a calmer way to check in with my body after long shifts. 
-            It feels supportive, clear, and actually doable in real life."
-          </blockquote>
-          <cite>Danielle R. &nbsp;·&nbsp; Nurse Member</cite>
-        </div>
-        <div class="testimonial-card">
-          <blockquote>
-            "I finally had language for what my body was doing under stress. 
-            The practices feel gentle, professional, and grounding."
-          </blockquote>
-          <cite>Marissa T. &nbsp;·&nbsp; Healthcare Professional</cite>
-        </div>
-        <div class="testimonial-card">
-          <blockquote>
-            "The membership feels like a steady layer of support instead of more pressure. 
-            I appreciate how calm and structured everything is."
-          </blockquote>
-          <cite>Alicia S. &nbsp;·&nbsp; Teacher Member</cite>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <span class="eyebrow">FAQ</span>
-      <h2>Common questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>What is included inside the membership?</summary>
-          <div class="faq-answer">
-            Members receive the Brock Check-In App, Brock Book Guide (BBG) access, 
-            monthly 1-on-1 somatic exercise calls, Nervous System Reset Worksheets, 
-            and priority access to in-person Houston bodywork sessions. Most members primarily use
-            Level One as local and distance personal coaching support, and bodywork remains optional.
-          </div>
-        </details>
-        <details>
-          <summary>Do I need in-person bodywork or physical touch for this to work?</summary>
-          <div class="faq-answer">
-            No. Level One Bodywork is mainly local and distance personal coaching built around
-            nervous system education, guided regulation practices, worksheets, and 1:1 support.
-            Physical touch is not required, and many members benefit from the membership without
-            ever receiving in-person bodywork. Houston bodywork is available as an optional layer
-            when it fits your needs.
-          </div>
-        </details>
-        <details>
-          <summary>Is this medical care or therapy?</summary>
-          <div class="faq-answer">
-            No. This is educational wellness support focused on somatic awareness, 
-            nervous system literacy, and practical regulation tools. It is not medical 
-            advice, diagnosis, or therapy.
-          </div>
-        </details>
-        <details>
-          <summary>Who is this designed for?</summary>
-          <div class="faq-answer">
-            Level One Bodywork is designed for people in high-stress roles — nurses, 
-            healthcare workers, teachers, caregivers, and anyone who feels chronically 
-            tense, wired, numb, or emotionally exhausted and wants practical support.
-          </div>
-        </details>
-        <details>
-          <summary>What does the Check-In App do?</summary>
-          <div class="faq-answer">
-            The Check-In App is a guided daily self-assessment that takes 3–5 minutes. 
-            It helps you track your nervous system state over time and identify patterns 
-            of activation or shutdown. Brock reviews your entries before each 1:1 call.
-          </div>
-        </details>
-        <details>
-          <summary>Can I cancel any time?</summary>
-          <div class="faq-answer">
-            Yes. Membership is month-to-month and can be cancelled any time with 
-            24-hour notice before your next renewal date. No commitments required.
-          </div>
-        </details>
-        <details>
-          <summary>How long does Level One take?</summary>
-          <div class="faq-answer">
-            Level One training varies per woman, but most members move through it in 
-            <strong>3 to 6 months</strong>. There is no fixed endpoint — progress is 
-            determined by the signals and patterns your body shows over time, not a 
-            countdown clock.<br/><br/>
-            Some women arrive carrying years of chronic tension and may spend closer to 
-            6 months building a consistent regulation foundation. Others shift more quickly 
-            and are ready for deeper work sooner. Both are normal. The 1:1 calls and 
-            Check-In App data help Brock track your progress and let you know when your 
-            body is genuinely ready to move forward.
-          </div>
-        </details>
-        <details>
-          <summary>What is the Brock Book Guide?</summary>
-          <div class="faq-answer">
-            The BBG is a structured coaching tool that uses your current book as a 
-            reflection anchor. You receive a guided worksheet for that title, then 
-            join a 30-minute 1:1 call with Brock to work through the insights — 
-            connecting what you're reading to what your body is experiencing.
-          </div>
-        </details>
-        <details>
-          <summary>Why is there a 30-day waiting period for bodywork?</summary>
-          <div class="faq-answer">
-            The 30-day period is not a gatekeeping measure — it is preparation. Before your first 
-            session, Brock uses your Check-In App data, worksheets, and 1:1 calls to understand 
-            the specific signals and patterns of your nervous system. That way, your first bodywork 
-            session is not generic. It is built around what your body has actually been communicating 
-            for the past month. Members who go through this process consistently report sessions that 
-            feel far more targeted and effective than walk-in bodywork.
-          </div>
-        </details>
-        <details>
-          <summary>What kind of bodywork does Level One use — and what does it not use?</summary>
-          <div class="faq-answer">
-            Level One bodywork is designed to guide the body into a parasympathetic (rest and restore) 
-            state. That means sessions focus on methods that calm and relax the nervous system — 
-            therapeutic stretching, breathwork, full-body relaxation massage, and polarity therapy.<br/><br/>
-            What Level One does <em>not</em> use: deep tissue work, stimulating pressure, or techniques 
-            designed to excite or activate the body. The goal is the opposite — to help the body 
-            experience safety, let go of held tension, and practice genuine rest. This distinction 
-            matters because many people in chronic stress have never received bodywork calibrated to 
-            their actual nervous system state.
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- SESSIONS -->
-  <section class="sessions" id="sessions">
-    <div class="container">
-      <span class="eyebrow">Houston private sessions</span>
-      <h2>Bodywork that calms the body — not excites it.</h2>
-      <p>
-        Level One bodywork is rooted in one principle: guiding the nervous system toward a 
-        parasympathetic state. Every session uses methods that relax and restore — 
-        therapeutic stretching, breathwork, full-body relaxation massage, and polarity therapy. 
-        Not deep tissue. Not stimulating pressure. Calm, steady, and body-led.
-      </p>
-      <div style="margin-block:1.5rem;padding:1rem 1.25rem;background:var(--cream);border-left:3px solid var(--gold);border-radius:2px;">
-        <p style="font-size:0.88rem;color:var(--brown);line-height:1.6;">
-          <strong>30-day waiting period for Houston members.</strong> Bodywork is available after your first 30 days of membership. This time is used to learn the signals and patterns of your body through the Check-In App and 1:1 calls — so your first session is fully customized to your nervous system, not generic.
-        </p>
-      </div>
-      <div class="session-cards">
-        <div class="session-card">
-          <div class="session-price">$189 <span class="session-price-note">($39 monthly deducted per service)</span></div>
-          <h4>Alpha Session</h4>
-          <p style="font-size:0.78rem;color:var(--gold);margin-bottom:0.75rem;">60, 90, or 120 minutes</p>
-          <ul class="session-features">
-            <li>Full-body relaxation massage</li>
-            <li>Focus: calming, downshifting, safety</li>
-            <li>Gentle, rhythmic, parasympathetic</li>
-            <li>Breathwork &amp; therapeutic stretching</li>
-          </ul>
-        </div>
-        <div class="session-card">
-          <div class="session-price">$225 <span class="session-price-note">($39 monthly deducted per service)</span></div>
-          <h4>Omega Session</h4>
-          <p style="font-size:0.78rem;color:var(--gold);margin-bottom:0.75rem;">90 minutes</p>
-          <ul class="session-features">
-            <li>Releases stored tension in the body</li>
-            <li>Focus: depth, structure, full reset</li>
-            <li>Slow, deliberate, restorative</li>
-            <li>Polarity therapy &amp; somatic integration</li>
-          </ul>
-        </div>
-      </div>
-      <p style="margin-top:1.25rem;font-size:0.8rem;color:var(--amber-light);font-style:italic;">
-        Available to Houston members after 30 days. Request via email or phone after your first 1:1 call.
-      </p>
-    </div>
-  </section>
-
-  <!-- WAITLIST / JOIN -->
-  <section class="waitlist" id="waitlist">
-    <div class="container">
-      <span class="eyebrow">Join now</span>
-      <h2>Begin with Level One Bodywork.</h2>
-      <p>
-        Steady somatic support, practical tools, and local and distance personal coaching — with
-        optional private bodywork in Houston when you're ready. No physical touch or bodywork is required.
-      </p>
-      <p>
-        Membership details and Stripe payment links will be emailed after sign up. Contact Brock
-        at bhhm2020@gmail.com or text 346-219-1603 with questions.
-      </p>
-      <div class="waitlist-perks">
-        <span class="waitlist-perk">40% off first month</span>
-        <span class="waitlist-perk">$39/month after</span>
-        <span class="waitlist-perk">Cancel any time</span>
-        <span class="waitlist-perk">5 member tools</span>
-      </div>
-      <form class="waitlist-form" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label for="first-name">First name</label>
-          <input type="text" id="first-name" placeholder="Your first name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="location">Are you in Houston?</label>
-          <select id="location" required>
-            <option value="" disabled selected>Choose an option</option>
-            <option value="yes">Yes, I am in Houston</option>
-            <option value="no">No, I want digital membership only</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-waitlist">Join Level One Bodywork →</button>
-        <p class="form-legal">
-          Education only &nbsp;·&nbsp; Not medical advice &nbsp;·&nbsp; 
-          Consult a qualified health professional for medical concerns
-        </p>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="/logo.jpg" alt="Brock Somatic Bodywork logo" class="brand-logo-img" />
-        <span>Brock Somatic Bodywork</span>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#membership">Membership</a></li>
-        <li><a href="#sessions">Sessions</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#waitlist">Join Now</a></li>
-      </ul>
-      <p class="footer-legal">
-        Brock John &nbsp;·&nbsp; Somatic Nervous System Educator &nbsp;·&nbsp; Houston, Texas<br />
-        346-219-1603
-      </p>
-      <p class="footer-legal" style="margin-top:0.25rem;">
-        Education only &nbsp;·&nbsp; Not medical advice &nbsp;·&nbsp; 
-        Consult a qualified health professional for medical concerns
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const form   = e.target;
-      const btn    = form.querySelector('.btn-waitlist');
-      const name   = form.querySelector('#first-name').value.trim();
-      const email  = form.querySelector('#email').value.trim();
-      const loc    = form.querySelector('#location').value;
-
-      // UI: loading state
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      btn.style.opacity = '0.7';
-
-      try {
-        const res = await fetch('/api/join', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, location: loc })
-        });
-
-        if (!res.ok) {
-          const err = await res.json().catch(() => ({}));
-          throw new Error(err.message || `Server error ${res.status}`);
-        }
-
-        // Success
-        btn.textContent = 'You\'re in — welcome to Level One ✓';
-        btn.style.background = '#2E1F0E';
-        btn.style.color = '#C9A96E';
-        btn.style.opacity = '1';
-        form.querySelectorAll('input, select').forEach(el => el.disabled = true);
-
-      } catch (err) {
-        console.error('Join error:', err);
-        btn.textContent = 'Something went wrong — try again';
-        btn.style.background = '#8B3A3A';
-        btn.style.color = '#fff';
-        btn.style.opacity = '1';
-        btn.disabled = false;
-        setTimeout(() => {
-          btn.textContent = 'Join Level One Bodywork →';
-          btn.style.background = '';
-          btn.style.color = '';
-        }, 4000);
-      }
-    }
-  </script>
+</footer>
 
 </body>
 </html>
